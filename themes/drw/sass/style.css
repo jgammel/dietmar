@@ -226,13 +226,33 @@ select,
 optgroup,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: "UniversLT-Condensed", sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6 {
   clear: both; }
+
+p.site-title, p.site-logo {
+  background: #d2232a;
+  color: white; }
+  p.site-title a, p.site-logo a {
+    color: white;
+    text-decoration: none;
+    padding-left: 50px; }
+  p.site-title span, p.site-logo span {
+    color: #000; }
+
+p.site-logo {
+  float: left;
+  overflow: hidden;
+  width: 25%; }
+
+p.site-title {
+  float: right;
+  overflow: hidden;
+  width: 75%; }
 
 p {
   margin-bottom: 1.5em; }
@@ -431,12 +451,14 @@ a {
   clear: both;
   display: block;
   float: left;
-  width: 100%; }
+  width: 100%;
+  height: 88px; }
   .main-navigation ul {
     display: none;
     list-style: none;
     margin: 0;
-    padding-left: 0; }
+    padding-left: 0;
+    padding-top: 15px; }
     .main-navigation ul ul {
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       float: left;
@@ -610,7 +632,8 @@ a {
   display: block; }
 
 .hentry {
-  margin: 0 0 1.5em; }
+  margin: 0 0 1.5em;
+  max-width: 500px; }
 
 .updated:not(.published) {
   display: none; }

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying taxonomy pages
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -14,7 +14,7 @@ get_header(); ?>
 
 		<?php
 		if ( have_posts() ) : ?>
-			<p class="site-title"><?php bloginfo( 'name' ); ?></p>
+
 			<header class="page-header">
 				<?php
 					the_archive_title( '<h1 class="page-title">', '</h1>' );

@@ -1,3 +1,25 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
+p.site-title, p.site-logo{
+	background: #d2232a;
+	color: white;
+	a{
+		color: white;
+		text-decoration: none;
+		padding-left: 50px;
+	}
+	span{
+		color: #000;
+	}
+}
+p.site-logo{
+	float: left;
+    overflow: hidden;
+    width: 25%;
+}
+p.site-title{
+	float: right;
+    overflow: hidden;
+    width: 75%;
+}

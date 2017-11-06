@@ -126,8 +126,8 @@ function custom_taxonomy_client() {
 		'singular_name'              => _x( 'Client', 'Taxonomy Singular Name', 'text_domain' ),
 		'menu_name'                  => __( 'Client', 'text_domain' ),
 		'all_items'                  => __( 'All Clients', 'text_domain' ),
-		'parent_item'                => __( 'Parent Item', 'text_domain' ),
-		'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
+		'parent_item'                => __( 'Parent Client', 'text_domain' ),
+		'parent_item_colon'          => __( 'Parent Client:', 'text_domain' ),
 		'new_item_name'              => __( 'New Client Name', 'text_domain' ),
 		'add_new_item'               => __( 'Add New Client', 'text_domain' ),
 		'edit_item'                  => __( 'Edit Client', 'text_domain' ),
@@ -139,9 +139,9 @@ function custom_taxonomy_client() {
 		'popular_items'              => __( 'Popular Items', 'text_domain' ),
 		'search_items'               => __( 'Search Items', 'text_domain' ),
 		'not_found'                  => __( 'Not Found', 'text_domain' ),
-		'no_terms'                   => __( 'No items', 'text_domain' ),
-		'items_list'                 => __( 'Items list', 'text_domain' ),
-		'items_list_navigation'      => __( 'Items list navigation', 'text_domain' ),
+		'no_terms'                   => __( 'No Clients', 'text_domain' ),
+		'items_list'                 => __( 'Clients list', 'text_domain' ),
+		'items_list_navigation'      => __( 'Clients list navigation', 'text_domain' ),
 	);
 	$rewrite = array(
 		'slug'                       => 'client',
@@ -206,7 +206,76 @@ function custom_taxonomy_genre() {
 }
 add_action( 'init', 'custom_taxonomy_genre', 0 );
 }
- 
+//Register Custom Metaboxes
+
+/* 1) Fire our meta box setup function on the post editor screen. */
+add_action( 'load-post.php', 'drw_box_year_setup' );
+add_action( 'load-post-new.php', 'drw_box_year_setup' );
+
+/* 2) Meta box setup function. */
+function drw_box_year_setup() {
+	add_action( 'add_meta_boxes', 'drw_add_custom_box' );
+	add_action( 'save_post', 'drw_save_postdata', 10, 2 );
+}
+
+/* 3) Create one or more meta boxes to be displayed on the post editor screen. */
+function drw_add_custom_box()
+{
+    add_meta_box(
+        'drw_box_year',			// Unique ID
+        'Year',  				// Box title
+        'drw_box_year_html',  	// Content callback, must be of type callable
+        'portfolio',            // Post type
+        'normal', 				//Context
+        'high' 					//Priority
+    );
+}
+add_action('add_meta_boxes', 'drw_add_custom_box');
+
+/* 4) Display the post meta box. */
+function drw_box_year_html($post)
+{
+     wp_nonce_field( basename( __FILE__ ), 'drw_box_year_nonce' ); ?>
+     
+    <label for="drw_box_year">Year work was completed:</label>
+    <br/>
+    <input type="text" name="drw_box_year" id="drw_box_year" value="<?php echo esc_attr( get_post_meta( $post->ID, 'drw_box_year', true ) ); ?>" size="30"></input>
+    <?php
+}
+
+function drw_save_postdata($post_id, $post)
+{
+/* Verify the nonce before proceeding. */
+  if ( !isset( $_POST['drw_box_year_nonce'] ) || !wp_verify_nonce( $_POST['drw_box_year_nonce'], basename( __FILE__ ) ) )
+    return $post_id;
+
+  /* Get the post type object. */
+  $post_type = get_post_type_object( $post->post_type );
+
+  /* Check if the current user has permission to edit the post. */
+  if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
+    return $post_id;
+
+  /* Get the posted data and sanitize it for use as an HTML class. */
+  $new_meta_value = ( isset( $_POST['drw_box_year'] ) ? sanitize_html_class( $_POST['drw_box_year'] ) : '' );
+  /* Get the meta key. */
+  $meta_key = 'drw_box_year';
+
+  /* Get the meta value of the custom field key. */
+  $meta_value = get_post_meta( $post_id, $meta_key, true );
+
+  /* If a new meta value was added and there was no previous value, add it. */
+  if ( $new_meta_value && '' == $meta_value )
+    add_post_meta( $post_id, $meta_key, $new_meta_value, true );
+
+  /* If the new meta value does not match the old value, update it. */
+  elseif ( $new_meta_value && $new_meta_value != $meta_value )
+    update_post_meta( $post_id, $meta_key, $new_meta_value );
+
+  /* If there is no new meta value but an old value exists, delete it. */
+  elseif ( '' == $new_meta_value && $meta_value )
+    delete_post_meta( $post_id, $meta_key, $meta_value );
+}
 /**
  * Set up portfolio custom post type.
  */

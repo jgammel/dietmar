@@ -3,12 +3,14 @@
 	display: block;
 	float: left;
 	width: 100%;
+	height: 88px;
 
 	ul {
 		display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
+		padding-top: 15px;
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
