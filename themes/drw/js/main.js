@@ -79,6 +79,8 @@ $(document).ready(function(){
   
   
   function OpenPortfolioLightbox(obj){
+	  var windowHeight = $(document).height();
+	  //windowHeight = windowHeight.toString() + "px";
 	  $.get(obj.attr('href'), function(data){
 		  var the_lightbox = "<div id=\"lightbox\"></div>";
 		  var exit_button = "<div id=\"lightbox-exit\"><span>X</span></div>";
@@ -87,6 +89,7 @@ $(document).ready(function(){
 		  var html = data.substring(html_start, html_end);
 		  $("body").append(the_lightbox);//create lightbox
 		  $("#lightbox").html(html);//add data to lightbox
+		  //$('#lightbox').css("height", windowHeight);
 		  slickify();  
 		  $("#lightbox").animate({
 			  opacity: 1,

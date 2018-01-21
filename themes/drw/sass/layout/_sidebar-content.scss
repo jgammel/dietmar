@@ -55,6 +55,9 @@
 				bottom: 0;
 				left: 0;
 				position: absolute;
+				.timeline-segment{
+					height: 100%;
+				}
 			}
 			.timeline-item-container{
 				position: absolute;

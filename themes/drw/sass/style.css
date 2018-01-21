@@ -772,6 +772,8 @@ a {
         bottom: 0;
         left: 0;
         position: absolute; }
+        .site-footer #timeline .decade .timeline-zero-year .timeline-segment {
+          height: 100%; }
       .site-footer #timeline .decade .timeline-item-container {
         position: absolute;
         bottom: 0;
@@ -813,6 +815,11 @@ a {
 .entry-footer {
   margin: 0;
   overflow: hidden; }
+  .page-content .post-edit-link,
+  .entry-content .post-edit-link,
+  .entry-summary .post-edit-link,
+  .entry-footer .post-edit-link {
+    display: block; }
   .page-content p.preview-text a.read-more,
   .entry-content p.preview-text a.read-more,
   .entry-summary p.preview-text a.read-more,
@@ -887,6 +894,10 @@ a {
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
+
+.single-post h1.entry-title {
+  font-size: 1.5em;
+  font-weight: bold; }
 
 body.single-portfolio .hentry {
   max-width: 675px; }

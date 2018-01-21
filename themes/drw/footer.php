@@ -95,9 +95,10 @@
 			}
 			if($decade !== []){
 				$earliest_year = $decade[0]['date'];
-				$zero_year = substr($earliest_year, 0, 3);
-				$zero_year .= "0";
-				echo("<div class=\"timeline-zero-year\">".$zero_year."</div>");
+				$zero_year_a = substr($earliest_year, 0, -2);
+				$zero_year_b = substr($earliest_year, -2, 1);
+				$zero_year_b .= "0";
+				echo("<div class=\"timeline-zero-year\">".$zero_year_a."<div class=\"timeline-segment\"></div><strong>".$zero_year_b."</strong></div>");
 			}
 			echo("<div class=\"timeline-item-container\">");
 			foreach($decade as $year){
