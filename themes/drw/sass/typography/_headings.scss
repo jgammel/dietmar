@@ -1,6 +1,11 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 }
+h1.entry-title{
+	font-size: 1rem;
+	font-weight: normal;
+	margin: 0;
+}
 p.site-title, p.site-logo{
 	background: #d2232a;
 	color: white;
@@ -17,9 +22,19 @@ p.site-logo{
 	float: left;
     overflow: hidden;
     width: 25%;
+    margin-top: 0;
+    font-family: $font__bold;
+    border-right: 8px solid white;
+}
+@media screen and (max-width: 37.5em) {
+	p.site-logo{
+		border-right: 8px solid #d2232a;
+	}
 }
 p.site-title{
 	float: right;
     overflow: hidden;
     width: 75%;
+    margin-top: 0;
+    border-left: 9px solid #d2232a;
 }

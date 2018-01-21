@@ -84,6 +84,12 @@ endif;
 add_action( 'after_setup_theme', 'drw_setup' );
 
 /**
+ * Remove Easy Image Gallery filter to access template functions
+ *
+ */
+remove_filter( 'the_content', 'easy_image_gallery_append_to_content' );
+
+/**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.
@@ -251,7 +257,6 @@ function drw_save_postdata($post_id, $post)
 
   /* Get the post type object. */
   $post_type = get_post_type_object( $post->post_type );
-
   /* Check if the current user has permission to edit the post. */
   if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
     return $post_id;
@@ -275,6 +280,7 @@ function drw_save_postdata($post_id, $post)
   /* If there is no new meta value but an old value exists, delete it. */
   elseif ( '' == $new_meta_value && $meta_value )
     delete_post_meta( $post_id, $meta_key, $meta_value );
+    
 }
 /**
  * Set up portfolio custom post type.
@@ -346,6 +352,100 @@ function portfolio() {
 add_action( 'init', 'portfolio', 0 );
 
 }
+
+/**
+ * Shortcodes
+ */
+ // [portfolio]
+function portfolio_shortcode( $atts ){
+	//check atts
+	$a = shortcode_atts( array(
+        'client' => NULL,
+        'genre' => NULL,
+    ), $atts );
+    if ($a['client'] !== NULL){
+	    $the_client = $a['client'];
+	    //run the loop
+	    // WP_Query arguments
+		$args = array(
+			'post_type'              => array( 'portfolio' ),
+			'post_status'            => array( 'publish' ),
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'client',
+					'field'    => 'slug',
+					'terms'    => $the_client,
+				),
+			),
+		);
+		
+		// The Query
+		$query = new WP_Query( $args );
+		$output = '<div id="clothesline" class="client">';
+		$output .= '<div id="clothesline-wrapper">';
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				$the_item_year = get_post_meta(get_the_ID(), 'drw_box_year');
+				$output .= '<div class="clothesline-item">';
+				$output .= '<a class="lightbox" href="'.get_permalink().'">';
+				$output .= get_the_post_thumbnail();
+				$output .= '<p>';
+				$output .= get_the_title();
+				$output .= '. ';
+				$output .= implode($the_item_year);
+				$output .= '</p>';
+				$output .= '</a>';
+				$output .= '</div>';
+			}
+		} 
+		// Restore original Post Data
+		wp_reset_postdata();
+		$output .= '</div>';
+		$output .= '</div>';
+    }
+    
+    if ($a['genre'] !== NULL){
+	    $the_genre = $a['genre'];
+	    //run the loop
+	    // WP_Query arguments
+		$args = array(
+			'post_type'              => array( 'portfolio' ),
+			'post_status'            => array( 'publish' ),
+			'tax_query' => array(
+				array(
+					'taxonomy' => 'genre',
+					'field'    => 'slug',
+					'terms'    => $the_genre,
+				),
+			),
+		);
+		
+		// The Query
+		$query = new WP_Query( $args );
+		$output = '<div id="clothesline" class="genre">';
+		$output .= '<div id="clothesline-wrapper">';
+		// The Loop
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				$output .= '<div class="clothesline-item">';
+				$output .= get_the_post_thumbnail();
+				$output .= get_the_title();
+				$output .= '</div>';
+			}
+		} 
+		// Restore original Post Data
+		wp_reset_postdata();
+		$output .= '</div>';
+		$output .= '</div>';
+    }
+    
+	return $output;
+}
+add_shortcode( 'portfolio', 'portfolio_shortcode' );
+
 /**
  * Enqueue scripts and styles.
  */
@@ -353,8 +453,16 @@ function drw_scripts() {
 	wp_enqueue_style( 'drw-style', get_template_directory_uri() . '/sass/style.css' );
 	
 	wp_enqueue_style( 'drw-fonts', get_template_directory_uri() . '/fonts/MyFontsWebfontsKit.css' );
+	
+	wp_enqueue_style( 'slick-style', get_template_directory_uri() . '/js/libs/slick/slick-theme.css' );
+	
+	wp_enqueue_script( 'jQuery', get_template_directory_uri() . '/js/libs/jquery-3.2.1.min.js', array(), '20151215', false );
+	
+	wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/libs/slick/slick.min.js', array('jQuery'), '20151215', false );
+	
+	wp_enqueue_script( 'drw-site', get_template_directory_uri() . '/js/main.js', array('jQuery'), '20151215', true );
 
-	wp_enqueue_script( 'drw-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'drw-navigation', get_template_directory_uri() . '/js/navigation.js', array('jQuery'), '20151215', true );
 
 	wp_enqueue_script( 'drw-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 

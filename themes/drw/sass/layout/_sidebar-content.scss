@@ -7,7 +7,11 @@
 .site-main {
 	margin: 0 0 0 $size__site-sidebar;
 }
-
+@media screen and (max-width: 37.5em) {
+	.site-main{
+		margin: 0 50px;
+	}
+}
 .site-content .widget-area {
 	float: left;
 	overflow: hidden;
@@ -17,4 +21,42 @@
 .site-footer {
 	clear: both;
 	width: $size__site-main;
+	position: relative;
+	bottom: 0;
+	width: 100vw;
+	*{
+		display: inline-block;
+	}
+	ul{
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+		li{
+			flex: 1 100%;
+			.timeline-segment{
+				height: 20px;
+				border-left: 1px solid black;
+			}
+		}
+	}
+	p{
+		margin: 0;
+		padding: 0;
+		height: 80px;
+		vertical-align: bottom;
+	}
+	.visually-hidden{
+		position: absolute;
+	}
+	#timeline{
+		position: relative;
+		width: 100vw;
+	}
+	span.divider{
+		border-left: 1px solid black;
+		height: 85px;
+		padding: 0 1px;
+	}
 }

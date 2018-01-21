@@ -80,7 +80,7 @@
 		var touchStartFn, i,
 			parentLink = container.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
 
-		if ( 'ontouchstart' in window ) {
+		if ( 'ontouchstart' in window) {
 			touchStartFn = function( e ) {
 				var menuItem = this.parentNode, i;
 
@@ -93,8 +93,10 @@
 						menuItem.parentNode.children[i].classList.remove( 'focus' );
 					}
 					menuItem.classList.add( 'focus' );
+					container.classList.add( 'nav-expanded' );
 				} else {
 					menuItem.classList.remove( 'focus' );
+					container.classList.remove( 'nav-expanded' );
 				}
 			};
 
@@ -103,4 +105,47 @@
 			}
 		}
 	}( container ) );
+	
 } )();
+
+//Begin jQuery code
+
+(function($) {
+	var container = $( '#site-navigation' );
+	if ( ! container ) {
+		return;
+	}
+	var parentLink = container.find( '.menu-item-has-children > a, .page_item_has_children > a' );
+	var firstTier = container.find('ul#primary-menu > li.menu-item-has-children > a');
+	var secondTier = container.find('ul.sub-menu li.menu-item-has-children > a');
+	var thirdTier = container.find('ul.sub-menu li.menu-item-has-children ul.sub-menu li.menu-item-has-children > a').siblings('ul.sub-menu');
+	parentLink.each(function(){
+		$(this).bind("mouseenter", function(){
+			container.addClass("nav-expanded");
+		});
+		$(this).bind("tap", function(){
+			container.addClass("nav-expanded");
+		});
+	});
+
+	container.bind("mouseleave",function(){
+		container.find('ul.sub-menu.slide-in').removeClass("slide-in");
+		container.removeClass("nav-expanded");
+		secondTier.removeClass("carrot-added");	
+	});
+	firstTier.bind('click', function(e){
+		e.preventDefault();
+	});
+	secondTier.bind('click', function(e){
+		e.preventDefault(); //prevent normal click activity
+		$(this).siblings('ul.sub-menu').first().toggleClass("slide-in"); //open the child menu instead
+		$(this).toggleClass("carrot-added");
+		e.stopPropagation(); //prevent bubbling
+	});
+	
+	thirdTier.bind('click', function(e){
+		secondTier.unbind('click');
+	});
+		
+})( jQuery );
+

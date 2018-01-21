@@ -1,0 +1,148 @@
+body.single-portfolio{
+	.hentry{
+		max-width: 675px;
+	}
+	#content{
+		color: #fff;
+		background: #7b6c54;
+		font-size: 14px;
+		min-height: calc(100vh - 88px);
+		h1.entry-title{
+			color: #fff;
+			font-size: 14px;
+		}
+		.entry-content{
+			width: 75%;
+			max-width: calc(75% - 60px);
+			float: left;
+			span.client-term{
+				color: #000;
+				padding-right: 10px;
+			}
+			ul.image-gallery{
+				li{
+					max-width: 70px;
+				}
+			}
+			#portfolio-slider{
+				position: relative;
+				.slick-prev, .slick-next{
+					margin-top: 50%;
+				}
+				.slick-prev{
+					left: 0;
+				}
+				.slick-next{
+					right: 0;
+				}
+				.portfolio-main-item{
+					float: left;
+					p{
+						padding: 0 25px;
+						margin-bottom: 1rem;
+					}
+				}
+			}
+		}
+		@media screen and (max-width: 37.5em) {
+			.entry-content{
+				width: 100%;
+				float: none;
+			}
+		}
+		.entry-header{
+			width: 25%;
+			min-width: 168px;
+			float: right;
+			margin-top: 1rem;
+		}
+		@media screen and (max-width: 37.5em) {
+			.entry-header{
+				width: 100%;
+				float: none;
+			}
+		}
+		.entry-footer{
+			clear: both;
+		}
+	}
+}
+
+/* PORTFOLIO LIGHTBOX */
+#lightbox{
+	background: #7b6c54;
+	color: #fff;
+	opacity: 0;
+	width: 100vw;
+	min-height: 100vh;
+	position: absolute;
+	top: 112px;
+	left: 0;
+	z-index: 10000;
+	padding: 1rem 0 0 0;
+	.hentry{
+		max-width: 700px;
+	}
+	#lightbox-exit{
+		z-index: 10001;
+		background: transparent;
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: table;
+		span{
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}
+	}
+	.entry-content{
+		width: 75%;
+		max-width: calc(75% - 60px);
+		float: left;
+		span.client-term{
+			color: #000;
+			padding-right: 10px;
+		}
+		ul.image-gallery{
+		  margin: 0;
+		  padding: 0;
+		  a{
+			  position: relative;
+			  display: block;
+		  }
+		  ul{
+				margin-bottom: 0;
+				li{
+					max-width: 70px;
+					display: inline-block;
+					padding: 0 20px 20px 0;
+					margin: 0;
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 37.5em) {
+		.entry-content{
+			width: 100%;
+			float: none;
+		}
+	}
+	.entry-header{
+		width: 25%;
+		min-width: 168px;
+		float: right;
+		margin-top: 1rem;
+	}
+	@media screen and (max-width: 37.5em) {
+		.entry-header{
+			width: 100%;
+			float: none;
+		}
+	}
+	.entry-footer{
+		clear: both;
+	}
+}
