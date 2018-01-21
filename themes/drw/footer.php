@@ -53,50 +53,87 @@
 			wp_reset_postdata();
 
 		?>
+		<?php 
+			$fifties = [];
+			$sixties = [];
+			$seventies = [];
+			$eighties = [];
+			$nineties = [];
+			$oughts = [];
+			$oughteens = [];
+			foreach ($timeline_array as $item_array){
+				$the_date = $item_array['date'];
+				$the_date = substr($the_date, 0, 3);//get first three digits of date
+				if($the_date == "195"){
+					array_push($fifties, $item_array);
+				}
+				if($the_date == "196"){
+					array_push($sixties, $item_array);
+				}
+				if($the_date == "197"){
+					array_push($seventies, $item_array);
+				}
+				if($the_date == "198"){
+					array_push($eighties, $item_array);
+				}
+				if($the_date == "199"){
+					array_push($nineties, $item_array);
+				}
+				if($the_date == "200"){
+					array_push($oughts, $item_array);
+				}
+				if($the_date == "201"){
+					array_push($oughteens, $item_array);
+				}
+		}
+		function timeline_dump($decade){
+			$i = 0;
+			while($i < 10){
+				echo("<div class=\"timeline-segment ".$i."\">");
+				echo("</div>");
+				$i++;
+			}
+			if($decade !== []){
+				$earliest_year = $decade[0]['date'];
+				$zero_year = substr($earliest_year, 0, 3);
+				$zero_year .= "0";
+				echo("<div class=\"timeline-zero-year\">".$zero_year."</div>");
+			}
+			echo("<div class=\"timeline-item-container\">");
+			foreach($decade as $year){
+				if($year){
+					echo("<div class=\"timeline-ball\">");
+					echo("</div>");
+					echo("<div class=\"title hidden\">");
+					echo($year['title']);
+					echo("</div>");
+				}
+			}
+			echo("</div>");
+		}
+		?>
 		<div id="timeline">
-			<ul>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><div class="date">19<span class="divider"></span><strong>50</strong></div></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><div class="date">19<span class="divider"></span><strong>60</strong></li></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><div class="date">19<span class="divider"></span><strong>70</strong></div></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><div class="date">19<span class="divider"></span><strong>80</strong></div></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><div class="date">19<span class="divider"></span><strong>90</strong></div></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><div class="date">20<span class="divider"></span><strong>00</strong></div></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-				<li><span class="timeline-segment"></span></li>
-
-			</ul>
+			<div class="decade fifties">
+				<?php timeline_dump($fifties);?>
+			</div>
+			<div class="decade sixties">
+				<?php timeline_dump($sixties);?>
+			</div>
+			<div class="decade seventies">
+				<?php timeline_dump($seventies);?>
+			</div>
+			<div class="decade eighties">
+				<?php timeline_dump($eighties);?>
+			</div>
+			<div class="decade nineties">
+				<?php timeline_dump($nineties);?>
+			</div>
+			<div class="decade oughts">
+				<?php timeline_dump($oughts);?>
+			</div>
+			<div class="decade oughteens">
+				<?php timeline_dump($oughteens);?>
+			</div>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

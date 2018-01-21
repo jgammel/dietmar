@@ -15,13 +15,21 @@ body.single-portfolio{
 			width: 75%;
 			max-width: calc(75% - 60px);
 			float: left;
+			transform: translateX(-25px);
 			span.client-term{
 				color: #000;
 				padding-right: 10px;
+				&:first-of-type{
+					padding-left: 25px;
+				}
 			}
 			ul.image-gallery{
+				clear: left;
 				li{
 					max-width: 70px;
+					&:focus{
+						outline: none;
+					}
 				}
 			}
 			#portfolio-slider{
@@ -102,24 +110,51 @@ body.single-portfolio{
 		width: 75%;
 		max-width: calc(75% - 60px);
 		float: left;
+		transform: translateX(-25px);
 		span.client-term{
 			color: #000;
 			padding-right: 10px;
+			&:first-of-type{
+				padding-left: 25px;
+			}
 		}
 		ul.image-gallery{
 		  margin: 0;
 		  padding: 0;
+		  clear: left;
 		  a{
 			  position: relative;
 			  display: block;
 		  }
 		  ul{
 				margin-bottom: 0;
-				li{
-					max-width: 70px;
-					display: inline-block;
-					padding: 0 20px 20px 0;
-					margin: 0;
+			}
+			li{
+				max-width: 70px;
+				display: inline-block;
+				padding: 0 20px 20px 0;
+				margin: 0;
+				&:focus{
+					outline: none;
+				}
+			}
+		}
+		#portfolio-slider{
+			position: relative;
+			.slick-prev, .slick-next{
+				margin-top: 50%;
+			}
+			.slick-prev{
+				left: 0;
+			}
+			.slick-next{
+				right: 0;
+			}
+			.portfolio-main-item{
+				float: left;
+				p{
+					padding: 0 25px;
+					margin-bottom: 1rem;
 				}
 			}
 		}

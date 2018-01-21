@@ -51,6 +51,7 @@ $(document).ready(function(){
 	  dots: false,
 	  centerMode: true,
 	  focusOnSelect: true,
+	  adaptiveHeight: true,
   });
 
   $('p.preview-text a.read-more').bind("click", function(){
@@ -85,7 +86,8 @@ $(document).ready(function(){
 		  var html_end = data.indexOf("</div><!-- #primary -->");
 		  var html = data.substring(html_start, html_end);
 		  $("body").append(the_lightbox);//create lightbox
-		  $("#lightbox").html(html);//add data to lightbox  
+		  $("#lightbox").html(html);//add data to lightbox
+		  slickify();  
 		  $("#lightbox").animate({
 			  opacity: 1,
 		  }, 500 , function(){
@@ -104,8 +106,34 @@ $(document).ready(function(){
 	  }, 500 , function(){
 		$("#lightbox").remove(); //destroy lightbox
 		$('#lightbox-exit').unbind("click");
+		unslickify();
 	  });
   }
-
+  
+  function slickify(){
+	$('#portfolio-slider').slick({
+		infinite: false,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: true,
+		adaptiveHeight: true,
+		centerMode: false,
+	});
+	
+	$('ul.image-gallery').slick({
+		slidesToShow: 5,
+		slidesToScroll: 1,
+		asNavFor: '#portfolio-slider',
+		infinite: false,
+		dots: false,
+		centerMode: true,
+		focusOnSelect: true,
+		adaptiveHeight: true,
+	});
+  }
+  function unslickify(){
+	  $('#portfolio-slider').slick('unslick');
+	  $('ul.image-gallery').slick('unslick');
+  }
 });
 	

@@ -742,31 +742,49 @@ a {
   clear: both;
   width: 100%;
   position: relative;
-  bottom: 0;
+  bottom: 100%;
   width: 100vw; }
   .site-footer * {
-    display: inline-block; }
-  .site-footer ul {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    margin: 0;
-    padding: 0; }
-    .site-footer ul li {
-      flex: 1 100%; }
-      .site-footer ul li .timeline-segment {
-        height: 20px;
-        border-left: 1px solid black; }
+    display: inherit;
+    vertical-align: bottom; }
   .site-footer p {
     margin: 0;
     padding: 0;
     height: 80px;
     vertical-align: bottom; }
-  .site-footer .visually-hidden {
-    position: absolute; }
   .site-footer #timeline {
     position: relative;
-    width: 100vw; }
+    width: 100vw;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0; }
+    .site-footer #timeline .decade {
+      flex: 1 100%;
+      position: relative; }
+      .site-footer #timeline .decade .timeline-segment {
+        height: 20px;
+        border-left: 1px solid black;
+        width: 10%; }
+      .site-footer #timeline .decade .timeline-zero-year {
+        height: 80px;
+        bottom: 0;
+        left: 0;
+        position: absolute; }
+      .site-footer #timeline .decade .timeline-item-container {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%; }
+        .site-footer #timeline .decade .timeline-item-container .timeline-ball {
+          width: 3px;
+          height: 3px;
+          background: #d2232a;
+          margin: 3px; }
+    .site-footer #timeline .title.hidden {
+      display: none;
+      opacity: 0; }
   .site-footer span.divider {
     border-left: 1px solid black;
     height: 85px;
@@ -884,12 +902,19 @@ body.single-portfolio #content {
   body.single-portfolio #content .entry-content {
     width: 75%;
     max-width: calc(75% - 60px);
-    float: left; }
+    float: left;
+    transform: translateX(-25px); }
     body.single-portfolio #content .entry-content span.client-term {
       color: #000;
       padding-right: 10px; }
-    body.single-portfolio #content .entry-content ul.image-gallery li {
-      max-width: 70px; }
+      body.single-portfolio #content .entry-content span.client-term:first-of-type {
+        padding-left: 25px; }
+    body.single-portfolio #content .entry-content ul.image-gallery {
+      clear: left; }
+      body.single-portfolio #content .entry-content ul.image-gallery li {
+        max-width: 70px; }
+        body.single-portfolio #content .entry-content ul.image-gallery li:focus {
+          outline: none; }
     body.single-portfolio #content .entry-content #portfolio-slider {
       position: relative; }
       body.single-portfolio #content .entry-content #portfolio-slider .slick-prev, body.single-portfolio #content .entry-content #portfolio-slider .slick-next {
@@ -949,23 +974,42 @@ body.single-portfolio #content {
   #lightbox .entry-content {
     width: 75%;
     max-width: calc(75% - 60px);
-    float: left; }
+    float: left;
+    transform: translateX(-25px); }
     #lightbox .entry-content span.client-term {
       color: #000;
       padding-right: 10px; }
+      #lightbox .entry-content span.client-term:first-of-type {
+        padding-left: 25px; }
     #lightbox .entry-content ul.image-gallery {
       margin: 0;
-      padding: 0; }
+      padding: 0;
+      clear: left; }
       #lightbox .entry-content ul.image-gallery a {
         position: relative;
         display: block; }
       #lightbox .entry-content ul.image-gallery ul {
         margin-bottom: 0; }
-        #lightbox .entry-content ul.image-gallery ul li {
-          max-width: 70px;
-          display: inline-block;
-          padding: 0 20px 20px 0;
-          margin: 0; }
+      #lightbox .entry-content ul.image-gallery li {
+        max-width: 70px;
+        display: inline-block;
+        padding: 0 20px 20px 0;
+        margin: 0; }
+        #lightbox .entry-content ul.image-gallery li:focus {
+          outline: none; }
+    #lightbox .entry-content #portfolio-slider {
+      position: relative; }
+      #lightbox .entry-content #portfolio-slider .slick-prev, #lightbox .entry-content #portfolio-slider .slick-next {
+        margin-top: 50%; }
+      #lightbox .entry-content #portfolio-slider .slick-prev {
+        left: 0; }
+      #lightbox .entry-content #portfolio-slider .slick-next {
+        right: 0; }
+      #lightbox .entry-content #portfolio-slider .portfolio-main-item {
+        float: left; }
+        #lightbox .entry-content #portfolio-slider .portfolio-main-item p {
+          padding: 0 25px;
+          margin-bottom: 1rem; }
   @media screen and (max-width: 37.5em) {
     #lightbox .entry-content {
       width: 100%;
