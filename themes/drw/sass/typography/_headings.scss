@@ -9,13 +9,20 @@ h1.entry-title{
 p.site-title, p.site-logo{
 	background: #d2232a;
 	color: white;
+	padding: 2px 0;
 	a{
 		color: white;
 		text-decoration: none;
 		padding-left: 50px;
+		@media screen and (max-width: 37.5em) {
+			padding-left: 25px;
+		}
 	}
 	span{
 		color: #000;
+		margin: 0 2px;
+		font-family: $font__bold;
+		line-height: 0px;
 	}
 }
 p.site-logo{
@@ -23,8 +30,9 @@ p.site-logo{
     overflow: hidden;
     width: 25%;
     margin-top: 0;
-    font-family: $font__bold;
+    font-family: $font__main;
     border-right: 8px solid white;
+    padding: 2px 0;
 }
 @media screen and (max-width: 37.5em) {
 	p.site-logo{

@@ -393,7 +393,9 @@ function portfolio_shortcode( $atts ){
 				$output .= get_the_post_thumbnail();
 				$output .= '<p>';
 				$output .= get_the_title();
-				$output .= '. ';
+				$output .= ', ';
+				$output .= '</p>';
+				$output .= '<p>';
 				$output .= implode($the_item_year);
 				$output .= '</p>';
 				$output .= '</a>';
@@ -430,9 +432,18 @@ function portfolio_shortcode( $atts ){
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
 				$query->the_post();
+				$the_item_year = get_post_meta(get_the_ID(), 'drw_box_year');
 				$output .= '<div class="clothesline-item">';
+				$output .= '<a class="lightbox" href="'.get_permalink().'">';
 				$output .= get_the_post_thumbnail();
+				$output .= '<p>';
 				$output .= get_the_title();
+				$output .= ', ';
+				$output .= '</p>';
+				$output .= '<p>';
+				$output .= implode($the_item_year);
+				$output .= '</p>';
+				$output .= '</a>';
 				$output .= '</div>';
 			}
 		} 
@@ -454,7 +465,12 @@ function drw_scripts() {
 	
 	wp_enqueue_style( 'drw-fonts', get_template_directory_uri() . '/fonts/MyFontsWebfontsKit.css' );
 	
-	wp_enqueue_style( 'slick-style', get_template_directory_uri() . '/js/libs/slick/slick-theme.css' );
+	wp_enqueue_style( 'drw-fontawesome-styles', get_template_directory_uri() . '/fonts/fontawesome-all.min.css' );
+	
+	wp_enqueue_style( 'slick-style-default', get_template_directory_uri() . '/js/libs/slick/slick.css' );
+	
+	wp_enqueue_style( 'slick-style', get_template_directory_uri() . '/js/libs/slick/slick-theme.css', array('slick-style-default') );
+	
 	
 	wp_enqueue_script( 'jQuery', get_template_directory_uri() . '/js/libs/jquery-3.2.1.min.js', array(), '20151215', false );
 	
@@ -463,6 +479,8 @@ function drw_scripts() {
 	wp_enqueue_script( 'drw-site', get_template_directory_uri() . '/js/main.js', array('jQuery'), '20151215', true );
 
 	wp_enqueue_script( 'drw-navigation', get_template_directory_uri() . '/js/navigation.js', array('jQuery'), '20151215', true );
+	
+	wp_enqueue_script( 'drw-fontawesome-js', get_template_directory_uri() . '/js/libs/fontawesome-all.min.js', array(), '20151215', false);
 
 	wp_enqueue_script( 'drw-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 

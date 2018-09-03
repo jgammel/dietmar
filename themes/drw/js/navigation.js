@@ -31,12 +31,12 @@
 	}
 
 	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			container.className = container.className.replace( ' toggled', '' );
+		if ( -1 !== container.className.indexOf( 'nav-expanded' ) ) {
+			container.className = container.className.replace( ' nav-expanded', '' );
 			button.setAttribute( 'aria-expanded', 'false' );
 			menu.setAttribute( 'aria-expanded', 'false' );
 		} else {
-			container.className += ' toggled';
+			container.className += ' nav-expanded';
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
 		}
@@ -127,15 +127,17 @@
 			container.addClass("nav-expanded");
 		});
 	});
-
-	container.bind("mouseleave",function(){
+	
+	container.bind("mouseleave", function(e){
 		container.find('ul.sub-menu.slide-in').removeClass("slide-in");
 		container.removeClass("nav-expanded");
 		secondTier.removeClass("carrot-added");	
 	});
+	
 	firstTier.bind('click', function(e){
 		e.preventDefault();
 	});
+	
 	secondTier.bind('click', function(e){
 		e.preventDefault(); //prevent normal click activity
 		$(this).siblings('ul.sub-menu').first().toggleClass("slide-in"); //open the child menu instead

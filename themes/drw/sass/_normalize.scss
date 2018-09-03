@@ -2,10 +2,21 @@ html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
+	-webkit-transition: all 1s ease;
+		-moz-transition: all 1s ease;
+		-o-transition: all 1s ease;
+		-ms-transition: all 1s ease;
+		transition: all 1s ease;
 }
 
 body {
 	margin: 0;
+	height: 100%;
+	-webkit-transition: all 1s ease;
+		-moz-transition: all 1s ease;
+		-o-transition: all 1s ease;
+		-ms-transition: all 1s ease;
+		transition: all 1s ease;
 }
 
 article,

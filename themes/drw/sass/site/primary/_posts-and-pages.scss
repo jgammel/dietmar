@@ -43,14 +43,25 @@
 		visibility: visible;
 		height: auto;
 		max-height: 1000vh;
-		-webkit-transition: max-height 0.5s linear; /* Safari */
-		transition: max-height 0.5s linear;
+		-webkit-transition: max-height 2.5s linear; /* Safari */
+		transition: max-height 2.5s linear;
 	}
 	#clothesline{
 		margin-top: 1.5em;
 		position: absolute;
 		margin-left: -25%;
 		width: 100vw;
+		#clothesline-wrapper{
+			opacity: 0;
+			&.slick-initialized{
+				opacity: 1;
+				-webkit-transition: opacity 0.5s linear;
+				-moz-transition: opacity 0.5s linear;
+				-o-transition: opacity 0.5s linear;
+				-ms-transition: opacity 0.5s linear;
+				transition: opacity 0.5s linear;
+			}
+		}
 		.clothesline-item{
 			float: left;
 			padding: 0 13px;
@@ -60,9 +71,15 @@
 				&:hover{
 					color: #000;
 				}
+				img{
+					margin-bottom: 20px;
+					box-shadow: 1px 1px 2px 1px #ddd;
+					-webkit-box-shadow: 1px 1px 2px 1px #ddd;
+				}
 			}
 			p{
 				font-size: 14px;
+				display: inline;
 			}
 		}
 	}

@@ -9,7 +9,7 @@
 }
 @media screen and (max-width: 37.5em) {
 	.site-main{
-		margin: 0 50px;
+		margin: 0 25px;
 	}
 }
 .site-content .widget-area {
@@ -21,9 +21,18 @@
 .site-footer {
 	clear: both;
 	width: $size__site-main;
-	position: relative;
-	bottom: 100%;
+	position: fixed;
+	bottom: 0;
 	width: 100vw;
+	background: white;
+	padding-top: 50px;
+	&.expanded{
+		position: relative;
+		margin-top:-50px;
+		#timeline-sort-bar{
+			opacity: 1;
+		}
+	}
 	*{
 		display: inherit;
 		vertical-align: bottom;
@@ -37,44 +46,183 @@
 	#timeline{
 		position: relative;
 		width: 100vw;
+		height: auto;
 		display: flex;
-		flex-flow: row nowrap;
-		justify-content: center;
-		margin: 0;
+		align-items: baseline;
+		//flex-flow: row nowrap;
+		//justify-content: center;
 		padding: 0;
+		//background-image: url('../images/backgrounds/timeline-01.png');
+		//background-position: left bottom;
+		//background-repeat: repeat-x;
 		.decade{
-			flex: 1 100%;
+			//flex: 1 100%;
+			flex: 0 0 150px;
 			position: relative;
+			align-items: baseline;
 			.timeline-segment{
-				height: 20px;
+				height: 30px;
 				border-left: 1px solid black;
-				width: 10%;
+				width: 20px;
+				padding: 0;
+				&:nth-of-type(2){
+					margin-left: 20px;
+				}
+				&.half{
+					height: 50px;
+					bottom: 0;
+				}
 			}
 			.timeline-zero-year{
 				height: 80px;
 				bottom: 0;
 				left: 0;
+				width: 0;
 				position: absolute;
+				> *{
+					line-height: 1em;
+					position: absolute;
+				}
+				> p{
+					left: -15px;
+				}
+				> strong{
+					right: -16px;
+				}
 				.timeline-segment{
-					height: 100%;
+					height: 80px;
+					width: 1px;
+					padding: 0;
 				}
 			}
 			.timeline-item-container{
 				position: absolute;
-				bottom: 0;
+				top: 64px;
 				left: 0;
 				width: 100%;
-				.timeline-ball{
-					width: 3px;
-					height: 3px;
-					background: #d2232a;
-					margin: 3px;
+				@supports (display: grid) {
+					display: grid;
+				    grid-template-areas: "a b c d e f g h i j";
+				    grid-gap: 7px 0px;
+				    grid-template-columns: repeat(10, 1fr);
+				    margin-left: -7px;
+				    grid-auto-flow: row dense;
+			    .timeline-data{
+				    grid-column-start: a;
+				    grid-row-end: span 1;
+				    grid-row: auto;
+				    position: relative;
+				    &.area1{
+					    grid-column-start: b;
+				    }
+				    &.area2{
+					    grid-column-start: c;
+				    }
+				    &.area3{
+					    grid-column-start: d;
+				    }
+				    &.area4{
+					    grid-column-start: e;
+				    }
+				    &.area5{
+					    grid-column-start: f;
+				    }
+				    &.area6{
+					    grid-column-start: g;
+				    }
+				    &.area7{
+					    grid-column-start: h;
+				    }
+				    &.area8{
+					    grid-column-start: i;
+				    }
+				    &.area9{
+					    grid-column-start: j;
+				    }
+				}
+					.timeline-ball{
+						width: 14px;
+						height: 14px;
+						background: #476a68;
+						margin: 0px;
+						border-radius: 100%;
+						&:hover{
+							background: #D2232A;
+						}
+					}
+				}
+			}
+			&.forties{
+				flex: 0 0 80px;
+				align-items: baseline;
+				.timeline-segment{
+					&:nth-of-type(2){
+						margin-left: 0px;
+					}
+				}
+			}			
+		}
+		.hover-box{
+			display: none;
+			top: 20px;
+			left: auto;
+			right: auto;
+			position: absolute;
+			z-index: 1;
+			font-size: 12px;
+			width: 100%;
+			padding: 3px;
+			background: rgba(255, 255, 255, 0.5);
+			border: 1px solid #ccc;
+			min-width: 200px;
+		}
+	}
+	#timeline-sort-bar{
+		margin: 0 0 0 auto;
+		display: block;
+		position: absolute;
+		bottom: -100%;
+		right: -460px;
+		opacity: 0;
+		> div{
+			display: inline-block;
+			padding: 10px 10px 20px 10px;
+			border: 1px solid #9c9185;
+			font-size: 10px;
+			color: #796957;
+			width: 200px;
+			max-width: 90px;
+			background: rgba(255,255,255,0.75);
+			vertical-align: top;
+			&:hover, &:focus{
+				background: rgba(240,240,240,0.75);
+			}
+			&.selected{
+				background: rgba(240,240,240,0.75);
+			}
+			&.filters{
+				width: 50px;
+				&:before{
+					content: '<';
+				}
+				&:after{
+					content: '';
+				}
+				&.selected{
+					background: rgba(255,255,255,0.75);
 				}
 			}
 		}
-		.title.hidden{
-			display: none;
-			opacity: 0;
+		&.filters-open{
+			right: 0;
+			> div.filters{
+				&:after{
+					content: '>';
+				}
+				&:before{
+					content: '';
+				}
+			}
 		}
 	}
 	span.divider{

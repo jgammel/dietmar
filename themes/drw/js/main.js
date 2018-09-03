@@ -49,9 +49,10 @@ $(document).ready(function(){
 	  asNavFor: '#portfolio-slider',
 	  infinite: false,
 	  dots: false,
+	  arrows: false,
 	  centerMode: true,
 	  focusOnSelect: true,
-	  adaptiveHeight: true,
+	  adaptiveHeight: false,
   });
 
   $('p.preview-text a.read-more').bind("click", function(){
@@ -129,14 +130,57 @@ $(document).ready(function(){
 		asNavFor: '#portfolio-slider',
 		infinite: false,
 		dots: false,
+		arrows: false,
 		centerMode: true,
 		focusOnSelect: true,
-		adaptiveHeight: true,
+		adaptiveHeight: false,
 	});
   }
   function unslickify(){
 	  $('#portfolio-slider').slick('unslick');
 	  $('ul.image-gallery').slick('unslick');
   }
+  
+  function genreSortify(dataName){
+	  var timelineData = $('.timeline-data');
+	  var timelineDot = timelineData.children('.timeline-ball');
+	  if(dataName === "all"){
+		  timelineDot.removeAttr( 'style' );
+		  return;
+	  }
+	  if(dataName === "filters"){
+		  $('#timeline-sort-bar').toggleClass("filters-open");
+		  return;
+	  }
+	  timelineDot.removeAttr( 'style' );
+	  timelineData.filter(function(){
+		 return $(this).attr('data-name').match(dataName); 
+	  }).children('.timeline-ball').css('background', '#d2232a');
+  }
+  
+  $('#timeline-sort-bar .sort-button').bind("click", function(e){
+	  var dataName = $(this).attr("data-name");
+	  $(this).siblings().removeClass("selected");
+	  $(this).addClass("selected");
+	  genreSortify(dataName);
+  });
+  
+  $('.timeline-ball').on("mouseenter mouseleave", function(event){
+	  $(this).siblings('.hover-box').fadeToggle(200, function(){
+		  //translateX to position of the ball
+	  });
+  });
+  
+  $('#colophon').bind("mouseenter", function(event){
+	  $('body').addClass("scrollaway");
+	  $(this).addClass("expanded");
+	  event.stopImmediatePropagation()
+  });
+  
+  $('#content').bind("mouseenter", function(event){
+	  $('body').removeClass("scrollaway");
+	  $('#colophon').removeClass("expanded");
+	  event.stopImmediatePropagation()
+  })
 });
 	

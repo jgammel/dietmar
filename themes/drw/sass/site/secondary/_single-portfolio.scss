@@ -25,15 +25,26 @@ body.single-portfolio{
 			}
 			ul.image-gallery{
 				clear: left;
-				li{
-					max-width: 70px;
-					&:focus{
-						outline: none;
+				.slick-track{
+					margin: 0;
+					li{
+						max-width: 70px;
+						img{
+							box-shadow: 1px 1px 2px 1px #695c49;
+							-webkit-box-shadow: 1px 1px 2px 1px #695c49;
+						}
+						&:focus{
+							outline: none;
+						}
 					}
 				}
 			}
 			#portfolio-slider{
 				position: relative;
+				img{
+					box-shadow: 1px 1px 2px 1px #695c49;
+					-webkit-box-shadow: 1px 1px 2px 1px #695c49;
+				}
 				.slick-prev, .slick-next{
 					margin-top: 50%;
 				}
@@ -87,7 +98,7 @@ body.single-portfolio{
 	top: 112px;
 	left: 0;
 	z-index: 10000;
-	padding: 1rem 0 0 0;
+	padding: 1rem 1rem 0 0;
 	.hentry{
 		max-width: 700px;
 	}
@@ -111,6 +122,10 @@ body.single-portfolio{
 		max-width: calc(75% - 60px);
 		float: left;
 		transform: translateX(-25px);
+		@media screen and (max-width: 37.5em) {
+			width: 100%;
+			max-width: none;
+		}
 		span.client-term{
 			color: #000;
 			padding-right: 10px;
@@ -129,18 +144,29 @@ body.single-portfolio{
 		  ul{
 				margin-bottom: 0;
 			}
-			li{
-				max-width: 70px;
-				display: inline-block;
-				padding: 0 20px 20px 0;
+			.slick-track{
 				margin: 0;
-				&:focus{
-					outline: none;
+				li{
+					max-width: 70px;
+					display: inline-block;
+					padding: 0 20px 20px 0;
+					margin: 0;
+					img{
+						box-shadow: 1px 1px 2px 1px #695c49;
+						-webkit-box-shadow: 1px 1px 2px 1px #695c49;
+					}
+					&:focus{
+						outline: none;
+					}
 				}
 			}
 		}
 		#portfolio-slider{
 			position: relative;
+			img{
+				box-shadow: 1px 1px 2px 1px #695c49;
+				-webkit-box-shadow: 1px 1px 2px 1px #695c49;
+			}
 			.slick-prev, .slick-next{
 				margin-top: 50%;
 			}
