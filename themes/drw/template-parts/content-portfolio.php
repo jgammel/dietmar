@@ -27,6 +27,11 @@
 		echo $body_text;
 		?>
 		</div>
+		<?php previous_post_link(); ?> 
+		<?php next_post_link(); ?>
+		<?php $this_post_tax = get_post_taxonomies( get_the_ID() ); ?> 
+		<?php $this_post_terms = get_the_terms(get_the_ID(),'client'); //tax terms associated with post ie 'MIT' 'Wellesly' ?> 
+		<?php var_dump($this_post_tax);?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

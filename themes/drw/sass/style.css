@@ -842,7 +842,8 @@ a {
   background: white;
   padding-top: 50px; }
   .site-footer.expanded {
-    position: relative; }
+    position: relative;
+    margin-top: -50px; }
     .site-footer.expanded #timeline-sort-bar {
       opacity: 1; }
   .site-footer * {
@@ -932,9 +933,13 @@ a {
               height: 14px;
               background: #476a68;
               margin: 0px;
-              border-radius: 100%; }
+              border-radius: 100%;
+              transform: scale(1);
+              transition: transform 0.2s ease; }
               .site-footer #timeline .decade .timeline-item-container .timeline-ball:hover {
-                background: #D2232A; } }
+                background: #D2232A;
+                transform: scale(1.25);
+                transition: transform 0.2s ease; } }
       .site-footer #timeline .decade.forties {
         flex: 0 0 80px;
         align-items: baseline; }
@@ -1107,7 +1112,8 @@ a {
       .entry-summary #clothesline .clothesline-item p,
       .entry-footer #clothesline .clothesline-item p {
         font-size: 14px;
-        display: inline; }
+        display: block;
+        margin: 0.25em 0; }
   @media screen and (max-width: 37.5em) {
     .page-content #clothesline,
     .entry-content #clothesline,

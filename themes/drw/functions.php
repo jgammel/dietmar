@@ -84,6 +84,42 @@ endif;
 add_action( 'after_setup_theme', 'drw_setup' );
 
 /**
+ * Add Filter to pass URL parameter to Navigation items
+ *
+ */
+ add_filter( 'wp_get_nav_menu_items','nav_items', 1, 3 );
+
+function nav_items( $items, $menu, $args ) 
+{
+	$client_pages = [];
+	$genre_pages = [];
+    if( is_admin() )
+        return $items;
+	
+    foreach( $items as $item ) 
+    {
+        if( $item->menu_item_parent == "38"){
+        	array_push($client_pages,$item->db_id);
+        	$item->url .= '?nav_by=client';
+        }
+        if( $item->menu_item_parent == "40"){
+        	array_push($genre_pages,$item->db_id);
+        	$item->url .= '?nav_by=genre';
+        }
+    }
+    foreach( $items as $item )
+    {
+	    if (in_array($item->menu_item_parent, $client_pages)){
+		    $item->url .= '?nav_by=client';
+	    }
+	    if (in_array($item->menu_item_parent, $genre_pages)){
+		    $item->url .= '?nav_by=genre';
+	    }
+    }
+    return $items;
+}
+
+/**
  * Remove Easy Image Gallery filter to access template functions
  *
  */
@@ -388,13 +424,18 @@ function portfolio_shortcode( $atts ){
 			while ( $query->have_posts() ) {
 				$query->the_post();
 				$the_item_year = get_post_meta(get_the_ID(), 'drw_box_year');
+				$the_subtitle = get_field('subtitle', get_the_ID());
 				$output .= '<div class="clothesline-item">';
 				$output .= '<a class="lightbox" href="'.get_permalink().'">';
 				$output .= get_the_post_thumbnail();
 				$output .= '<p>';
 				$output .= get_the_title();
-				$output .= ', ';
 				$output .= '</p>';
+				if ($the_subtitle !== false){
+					$output .= '<p>';
+					$output .= $the_subtitle;
+					$output .= '</p>';
+				}
 				$output .= '<p>';
 				$output .= implode($the_item_year);
 				$output .= '</p>';
@@ -433,13 +474,18 @@ function portfolio_shortcode( $atts ){
 			while ( $query->have_posts() ) {
 				$query->the_post();
 				$the_item_year = get_post_meta(get_the_ID(), 'drw_box_year');
+				$the_subtitle = get_field('subtitle', get_the_ID());
 				$output .= '<div class="clothesline-item">';
 				$output .= '<a class="lightbox" href="'.get_permalink().'">';
 				$output .= get_the_post_thumbnail();
 				$output .= '<p>';
 				$output .= get_the_title();
-				$output .= ', ';
 				$output .= '</p>';
+				if ($the_subtitle !== false){
+					$output .= '<p>';
+					$output .= $the_subtitle;
+					$output .= '</p>';
+				}
 				$output .= '<p>';
 				$output .= implode($the_item_year);
 				$output .= '</p>';
