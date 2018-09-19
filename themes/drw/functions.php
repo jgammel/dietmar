@@ -419,6 +419,12 @@ function portfolio_shortcode( $atts ){
 		$query = new WP_Query( $args );
 		$output = '<div id="clothesline" class="client">';
 		$output .= '<div id="clothesline-wrapper">';
+		if (isset($_GET["nav_by"])){
+			$nav_by = $_GET["nav_by"];
+		}
+		else{
+			$nav_by = "client";
+		}
 		// The Loop
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
@@ -426,7 +432,7 @@ function portfolio_shortcode( $atts ){
 				$the_item_year = get_post_meta(get_the_ID(), 'drw_box_year');
 				$the_subtitle = get_field('subtitle', get_the_ID());
 				$output .= '<div class="clothesline-item">';
-				$output .= '<a class="lightbox" href="'.get_permalink().'">';
+				$output .= '<a class="lightbox" href="'.get_permalink().'?nav_by='.$nav_by.'&term='.$the_client.'">';
 				$output .= get_the_post_thumbnail();
 				$output .= '<p>';
 				$output .= get_the_title();
@@ -469,6 +475,12 @@ function portfolio_shortcode( $atts ){
 		$query = new WP_Query( $args );
 		$output = '<div id="clothesline" class="genre">';
 		$output .= '<div id="clothesline-wrapper">';
+		if (isset($_GET["nav_by"])){
+			$nav_by = $_GET["nav_by"];
+		}
+		else{
+			$nav_by = "genre";
+		}
 		// The Loop
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
@@ -476,7 +488,7 @@ function portfolio_shortcode( $atts ){
 				$the_item_year = get_post_meta(get_the_ID(), 'drw_box_year');
 				$the_subtitle = get_field('subtitle', get_the_ID());
 				$output .= '<div class="clothesline-item">';
-				$output .= '<a class="lightbox" href="'.get_permalink().'">';
+				$output .= '<a class="lightbox" href="'.get_permalink().'?nav_by='.$nav_by.'&term='.$the_genre.'">';
 				$output .= get_the_post_thumbnail();
 				$output .= '<p>';
 				$output .= get_the_title();

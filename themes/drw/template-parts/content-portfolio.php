@@ -27,16 +27,22 @@
 		echo $body_text;
 		?>
 		</div>
-		<?php previous_post_link(); ?> 
-		<?php next_post_link(); ?>
-		<?php $this_post_tax = get_post_taxonomies( get_the_ID() ); ?> 
-		<?php $this_post_terms = get_the_terms(get_the_ID(),'client'); //tax terms associated with post ie 'MIT' 'Wellesly' ?> 
-		<?php var_dump($this_post_tax);?>
+		<?php if(isset($_GET["nav_by"])){
+			$page_tax = $_GET["nav_by"]; //navigating by client or genre
+			next_post_link('Previous: %link', '%title', true, ' ', $page_tax);
+			previous_post_link('Next: %link', '%title', true, ' ', $page_tax);
+		}
+		else{
+			previous_post_link();
+			next_post_link();
+		}
+		?>
+		
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php
-			$client_tax_array = get_the_terms(get_the_ID(), 'client'); //Client tag
+			$client_tax_array = get_the_terms(get_the_ID(), 'client'); //Client tag, i.e "M.I.T"
 			if($client_tax_array == true){
 				foreach ($client_tax_array as $client_object){
 					$output = "<span class=\"client-term\">";
@@ -48,8 +54,9 @@
 			?>
 			<div id="portfolio-slider">
 				<?php
-					$portfolio_nav_ids = get_post_meta( get_the_ID(), '_easy_image_gallery', true ); //gets the IDs of media in the gallery	
-					$portfolio_nav_array = explode(",", $portfolio_nav_ids);
+					$portfolio_nav_ids = get_post_meta( get_the_ID(), '_easy_image_gallery_v2', true ); //gets the IDs of media in the gallery
+					$portfolio_shortcode_id = $portfolio_nav_ids[0]["SHORTCODE"];
+					$portfolio_nav_array = $portfolio_nav_ids[0]["DATA"];
 					foreach ($portfolio_nav_array as $portfolio_nav_item){
 						echo("<div class=\"portfolio-main-item\">");
 						echo("<p>");
@@ -61,7 +68,7 @@
 			</div><!-- #portfolio-slider -->
 			<?php
 			if( function_exists( 'easy_image_gallery' ) ) {
-				echo easy_image_gallery();
+				echo easy_image_gallery($portfolio_shortcode_id);
 			}
 		?>
 	</div><!-- .entry-content -->
