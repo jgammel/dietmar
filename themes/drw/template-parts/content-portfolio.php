@@ -26,17 +26,43 @@
 		<?php
 		echo $body_text;
 		?>
-		</div>
-		<?php if(isset($_GET["nav_by"])){
-			$page_tax = $_GET["nav_by"]; //navigating by client or genre
-			next_post_link('Previous: %link', '%title', true, ' ', $page_tax);
-			previous_post_link('Next: %link', '%title', true, ' ', $page_tax);
+		<div class="post-navigtion">
+		<?php 
+		//Portfolio Navigation by Client or genre
+		if(isset($_GET["nav_by"])){
+			$page_tax = $_GET["nav_by"];
+			$page_term = $_GET["term"];
+		?>
+			<div class="post-navigation-next">
+		<?php
+			next_post_link('« %link', '%title', true, ' ', $page_tax);
+		?>
+			</div>
+			<div class="post-navigation-prev">
+		<?php
+			previous_post_link('%link »', '%title', true, ' ', $page_tax);
+		?>
+			</div>
+		<?php
 		}
 		else{
-			previous_post_link();
+		?>
+		<div class="post-navigation-next">
+		<?php
 			next_post_link();
+		?>
+		</div>
+		<div class="post-navigation-prev">
+		<?php
+			previous_post_link();
+		?>
+		</div>
+		<?php
 		}
 		?>
+		</div>
+		</div>
+		
 		
 	</header><!-- .entry-header -->
 

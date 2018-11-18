@@ -100,6 +100,11 @@ $(document).ready(function(){
 				  $(this).remove(); //destroy exit button
 				 ClosePortfolioLightbox(); 
 			  });
+		   $('#lightbox .post-navigation-next a, #lightbox .post-navigation-prev a').bind("click", function(e){
+				  //open portfolio item in a lightbox
+				  e.preventDefault();
+				  ClosePortfolioLightboxAndOpenNew($(this)); 
+			  });
 		  }); 
 	  });
   }
@@ -111,6 +116,28 @@ $(document).ready(function(){
 		$("#lightbox").remove(); //destroy lightbox
 		$('#lightbox-exit').unbind("click");
 		unslickify();
+	  });
+  }
+  
+  function ClosePortfolioLightboxAndOpenNew(obj){
+	  unslickify();
+	  $.get(obj.attr('href'), function(data){
+		  var exit_button = "<div id=\"lightbox-exit\"><span>X</span></div>";
+		  var html_start = data.indexOf("<div id=\"primary\" class=\"content-area\">");
+		  var html_end = data.indexOf("</div><!-- #primary -->");
+		  var html = data.substring(html_start, html_end);
+		  $("#lightbox").html(html);//add data to lightbox
+		  slickify();
+		  $("#lightbox").append(exit_button);// create exit button
+		  $('#lightbox-exit').bind("click", function(e){
+			  $(this).remove(); //destroy exit button
+			 ClosePortfolioLightbox(); 
+		  });
+		  $('#lightbox .post-navigation-next a, #lightbox .post-navigation-prev a').bind("click", function(e){
+			  //open portfolio item in a lightbox
+			  e.preventDefault();
+			  ClosePortfolioLightboxAndOpenNew($(this)); 
+		  });
 	  });
   }
   

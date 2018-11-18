@@ -707,7 +707,8 @@ a {
 .site-main .posts-navigation,
 .site-main .post-navigation {
   margin: 0 0 1.5em;
-  overflow: hidden; }
+  overflow: hidden;
+  max-width:500px; }
 
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
@@ -1200,6 +1201,7 @@ body.single-portfolio #content {
   opacity: 0;
   width: 100vw;
   min-height: 100vh;
+  height: calc(100% + 112px);
   position: absolute;
   top: 112px;
   left: 0;
