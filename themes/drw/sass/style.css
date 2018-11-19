@@ -598,6 +598,7 @@ a {
         position: relative;
         float: none;
         padding-left: 10px;
+        margin-bottom: 1rem;
         display: none;
         -webkit-transition: height 2s linear;
         /* Safari */
@@ -707,8 +708,7 @@ a {
 .site-main .posts-navigation,
 .site-main .post-navigation {
   margin: 0 0 1.5em;
-  overflow: hidden;
-  max-width:500px; }
+  overflow: hidden; }
 
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
