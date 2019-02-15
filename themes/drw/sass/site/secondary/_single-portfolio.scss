@@ -7,7 +7,7 @@ body.single-portfolio{
 		background: #7b6c54;
 		font-size: 14px;
 		min-height: calc(100vh - 88px);
-		h1.entry-title{
+		h2.entry-title{
 			color: #fff;
 			font-size: 14px;
 		}
@@ -74,6 +74,14 @@ body.single-portfolio{
 			min-width: 168px;
 			float: right;
 			margin-top: 1rem;
+			.portfolio-details{
+				a{
+					color: black;
+					&:hover{
+						color: #999;
+					}
+				}
+			}
 		}
 		@media screen and (max-width: 37.5em) {
 			.entry-header{
@@ -197,6 +205,14 @@ body.single-portfolio{
 		min-width: 168px;
 		float: right;
 		margin-top: 1rem;
+		.portfolio-details{
+			a{
+				color: black;
+				&:hover{
+					color: #999;
+				}
+			}
+		}
 	}
 	@media screen and (max-width: 37.5em) {
 		.entry-header{

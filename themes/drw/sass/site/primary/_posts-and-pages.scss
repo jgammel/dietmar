@@ -49,8 +49,8 @@
 	#clothesline{
 		margin-top: 1.5em;
 		position: absolute;
-		margin-left: -25%;
-		width: 100vw;
+		width: calc(100vw - 25%);
+		margin-left: -13px;
 		#clothesline-wrapper{
 			opacity: 0;
 			&.slick-initialized{
@@ -86,7 +86,7 @@
 	}
 	@media screen and (max-width: 37.5em) {
 		#clothesline{
-			margin-left: -50px;
+			width: calc(100vw - 13px);
 		}
 	}
 }
@@ -97,7 +97,7 @@
 }
 
 .single-post{
-	h1.entry-title{
+	h2.entry-title{
 		font-size: 1.5em;
 		font-weight: bold;
 	}
