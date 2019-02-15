@@ -245,7 +245,7 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
   clear: both; }
 
-h1.entry-title {
+h2.entry-title {
   font-size: 1rem;
   font-weight: normal;
   margin: 0; }
@@ -472,7 +472,8 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: #d2232a; }
+  color: #d2232a;
+  text-decoration: none; }
   a:visited {
     color: #d2232a; }
   a:hover,
@@ -1067,8 +1068,8 @@ a {
   .entry-footer #clothesline {
     margin-top: 1.5em;
     position: absolute;
-    margin-left: -25%;
-    width: 100vw; }
+    width: calc(100vw - 25%);
+    margin-left: -13px; }
     .page-content #clothesline #clothesline-wrapper,
     .entry-content #clothesline #clothesline-wrapper,
     .entry-summary #clothesline #clothesline-wrapper,
@@ -1120,13 +1121,13 @@ a {
     .entry-content #clothesline,
     .entry-summary #clothesline,
     .entry-footer #clothesline {
-      margin-left: -50px; } }
+      width: calc(100vw - 13px); } }
 
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
 
-.single-post h1.entry-title {
+.single-post h2.entry-title {
   font-size: 1.5em;
   font-weight: bold; }
 
@@ -1138,7 +1139,7 @@ body.single-portfolio #content {
   background: #7b6c54;
   font-size: 14px;
   min-height: calc(100vh - 88px); }
-  body.single-portfolio #content h1.entry-title {
+  body.single-portfolio #content h2.entry-title {
     color: #fff;
     font-size: 14px; }
   body.single-portfolio #content .entry-content {
@@ -1187,6 +1188,10 @@ body.single-portfolio #content {
     min-width: 168px;
     float: right;
     margin-top: 1rem; }
+    body.single-portfolio #content .entry-header .portfolio-details a {
+      color: black; }
+      body.single-portfolio #content .entry-header .portfolio-details a:hover {
+        color: #999; }
   @media screen and (max-width: 37.5em) {
     body.single-portfolio #content .entry-header {
       width: 100%;
@@ -1282,6 +1287,10 @@ body.single-portfolio #content {
     min-width: 168px;
     float: right;
     margin-top: 1rem; }
+    #lightbox .entry-header .portfolio-details a {
+      color: black; }
+      #lightbox .entry-header .portfolio-details a:hover {
+        color: #999; }
   @media screen and (max-width: 37.5em) {
     #lightbox .entry-header {
       width: 100%;
