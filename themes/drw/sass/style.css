@@ -1028,6 +1028,14 @@ a {
   .entry-summary .post-edit-link,
   .entry-footer .post-edit-link {
     display: block; }
+  .page-content span.cat-links,
+  .page-content span.tags-links,
+  .entry-content span.cat-links,
+  .entry-content span.tags-links,
+  .entry-summary span.cat-links,
+  .entry-summary span.tags-links,
+  .entry-footer span.cat-links, .entry-footer span.tags-links {
+    display: block; }
   .page-content p.preview-text a.read-more,
   .entry-content p.preview-text a.read-more,
   .entry-summary p.preview-text a.read-more,
