@@ -182,7 +182,7 @@ $(document).ready(function(){
 	  timelineDot.removeAttr( 'style' );
 	  timelineData.filter(function(){
 		 return $(this).attr('data-name').match(dataName); 
-	  }).children('.timeline-ball').css('background', '#d2232a');
+	  }).children('.timeline-ball').css('background', '#000000');
   }
   
   $('#timeline-sort-bar .sort-button').bind("click", function(e){

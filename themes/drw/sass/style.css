@@ -933,13 +933,13 @@ a {
             .site-footer #timeline .decade .timeline-item-container .timeline-ball {
               width: 14px;
               height: 14px;
-              background: #476a68;
+              background: #D2232A;
               margin: 0px;
               border-radius: 100%;
               transform: scale(1);
               transition: transform 0.2s ease; }
               .site-footer #timeline .decade .timeline-item-container .timeline-ball:hover {
-                background: #D2232A;
+                background: #000;
                 transform: scale(1.25);
                 transition: transform 0.2s ease; } }
       .site-footer #timeline .decade.forties {
