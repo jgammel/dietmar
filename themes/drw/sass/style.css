@@ -1153,7 +1153,8 @@ body.single-portfolio #content {
       body.single-portfolio #content .entry-content span.client-term:first-of-type {
         padding-left: 25px; }
     body.single-portfolio #content .entry-content ul.image-gallery {
-      clear: left; }
+      clear: left;
+      padding: 0 25px; }
       body.single-portfolio #content .entry-content ul.image-gallery .slick-track {
         margin: 0; }
         body.single-portfolio #content .entry-content ul.image-gallery .slick-track li {
@@ -1255,7 +1256,7 @@ body.single-portfolio #content {
         #lightbox .entry-content ul.image-gallery .slick-track li {
           max-width: 70px;
           display: inline-block;
-          padding: 0 20px 20px 0;
+          padding: 0 0 25px 25px;
           margin: 0; }
           #lightbox .entry-content ul.image-gallery .slick-track li img {
             box-shadow: 1px 1px 2px 1px #695c49;
