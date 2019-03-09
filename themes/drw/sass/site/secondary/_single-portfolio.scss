@@ -16,7 +16,8 @@ body.single-portfolio{
 		}
 		.entry-content{
 			float: left;
-			max-width: calc(75% - 60px);
+			width: calc(75% - 60px);
+			max-width: 800px;
 			margin-left: 9px;
 			span.client-term{
 				color: #000;
@@ -67,13 +68,14 @@ body.single-portfolio{
 				width: 100%;
 				float: none;
 				margin-left: 0;
+				max-width: none;
 			}
 		}
 		.entry-header{
 			width: 25%;
 			min-width: 168px;
 			float: left;
-			margin-top: 1rem;
+			margin-top: 2rem;
 			text-align: right;
 			padding-right: 1em;
 			h2{
@@ -99,6 +101,7 @@ body.single-portfolio{
 				float: none;
 				text-align: left;
 				padding-right: 0;
+				margin-top: 1rem;
 				h2, .portfolio-details{
 					max-width: none;
 					float: none;
@@ -147,8 +150,8 @@ body.single-portfolio{
 		}
 	}
 	.entry-content{
-		width: 75%;
-		max-width: calc(75% - 60px);
+		width: calc(75% - 60px);
+		max-width: 800px;
 		float: left;
 		margin-left: 9px;
 		@media screen and (max-width: 37.5em) {
@@ -214,6 +217,7 @@ body.single-portfolio{
 	@media screen and (max-width: 37.5em) {
 		.entry-content{
 			width: 100%;
+			max-width: none;
 			float: none;
 		}
 	}
@@ -221,7 +225,7 @@ body.single-portfolio{
 		width: 25%;
 		min-width: 168px;
 		float: left;
-		margin-top: 1rem;
+		margin-top: 2rem;
 		text-align: right;
 		padding-right: 1em;
 		h2{
@@ -247,6 +251,7 @@ body.single-portfolio{
 			float: none;
 			text-align: left;
 			padding-right: 0;
+			margin-top: 1rem;
 			h2, .portfolio-details{
 				max-width: none;
 				float: none;

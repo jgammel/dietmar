@@ -1149,7 +1149,8 @@ body.single-portfolio #content {
     font-size: 14px; }
   body.single-portfolio #content .entry-content {
     float: left;
-    max-width: calc(75% - 60px);
+    width: calc(75% - 60px);
+    max-width: 800px;
     margin-left: 9px; }
     body.single-portfolio #content .entry-content span.client-term {
       color: #000;
@@ -1185,12 +1186,13 @@ body.single-portfolio #content {
     body.single-portfolio #content .entry-content {
       width: 100%;
       float: none;
-      margin-left: 0; } }
+      margin-left: 0;
+      max-width: none; } }
   body.single-portfolio #content .entry-header {
     width: 25%;
     min-width: 168px;
     float: left;
-    margin-top: 1rem;
+    margin-top: 2rem;
     text-align: right;
     padding-right: 1em; }
     body.single-portfolio #content .entry-header h2 {
@@ -1210,7 +1212,8 @@ body.single-portfolio #content {
       width: 100%;
       float: none;
       text-align: left;
-      padding-right: 0; }
+      padding-right: 0;
+      margin-top: 1rem; }
       body.single-portfolio #content .entry-header h2, body.single-portfolio #content .entry-header .portfolio-details {
         max-width: none;
         float: none;
@@ -1249,8 +1252,8 @@ body.single-portfolio #content {
       vertical-align: middle;
       text-align: center; }
   #lightbox .entry-content {
-    width: 75%;
-    max-width: calc(75% - 60px);
+    width: calc(75% - 60px);
+    max-width: 800px;
     float: left;
     margin-left: 9px; }
     @media screen and (max-width: 37.5em) {
@@ -1300,12 +1303,13 @@ body.single-portfolio #content {
   @media screen and (max-width: 37.5em) {
     #lightbox .entry-content {
       width: 100%;
+      max-width: none;
       float: none; } }
   #lightbox .entry-header {
     width: 25%;
     min-width: 168px;
     float: left;
-    margin-top: 1rem;
+    margin-top: 2rem;
     text-align: right;
     padding-right: 1em; }
     #lightbox .entry-header h2 {
@@ -1325,7 +1329,8 @@ body.single-portfolio #content {
       width: 100%;
       float: none;
       text-align: left;
-      padding-right: 0; }
+      padding-right: 0;
+      margin-top: 1rem; }
       #lightbox .entry-header h2, #lightbox .entry-header .portfolio-details {
         max-width: none;
         float: none;
