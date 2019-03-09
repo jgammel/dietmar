@@ -1156,7 +1156,8 @@ body.single-portfolio #content {
       padding-right: 10px; }
     body.single-portfolio #content .entry-content ul.image-gallery {
       clear: left;
-      padding: 0 25px; }
+      padding: 0 25px;
+      visibility: hidden; }
       body.single-portfolio #content .entry-content ul.image-gallery .slick-track {
         margin: 0; }
         body.single-portfolio #content .entry-content ul.image-gallery .slick-track li {
@@ -1266,7 +1267,8 @@ body.single-portfolio #content {
     #lightbox .entry-content ul.image-gallery {
       margin: 0;
       padding: 0;
-      clear: left; }
+      clear: left;
+      visibility: hidden; }
       #lightbox .entry-content ul.image-gallery a {
         position: relative;
         display: block; }

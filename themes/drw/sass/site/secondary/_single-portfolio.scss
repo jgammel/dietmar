@@ -25,6 +25,7 @@ body.single-portfolio{
 			ul.image-gallery{
 				clear: left;
 				padding: 0 25px;
+				visibility: hidden;
 				.slick-track{
 					margin: 0;
 					li{
@@ -166,6 +167,7 @@ body.single-portfolio{
 		  margin: 0;
 		  padding: 0;
 		  clear: left;
+		  visibility: hidden;
 		  a{
 			  position: relative;
 			  display: block;
