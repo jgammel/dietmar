@@ -21,11 +21,11 @@
 		<?php
 		endif; 
 		$body_text = apply_filters( 'the_content', get_the_content() );
+		$the_date = get_post_meta($post->ID, 'drw_box_year', true);
 		?>
 		<div class="portfolio-details">
-		<?php
-		echo $body_text;
-		?>
+			<?php echo $body_text; ?>
+			<p><?php echo $the_date; ?></p>
 		<div class="post-navigtion">
 		<?php 
 		//Portfolio Navigation by Client or genre
@@ -97,9 +97,11 @@
 				echo easy_image_gallery($portfolio_shortcode_id);
 			}
 		?>
-	</div><!-- .entry-content -->
-
+		
 	<footer class="entry-footer">
 		<?php drw_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+	
+	</div><!-- .entry-content -->
+
 </article><!-- #post-<?php the_ID(); ?> -->
