@@ -39,7 +39,7 @@
 
 	<div id="content" class="site-content">
 	<div class="site-branding">
-		<p class="site-logo"><a href="http://localhost:8888/" rel="home">D<span>/</span>R<span>/</span>W</a></p>
+		<p class="site-logo"><a href="/" rel="home">D<span>/</span>R<span>/</span>W</a></p>
 		<p class="site-title"><?php bloginfo( 'name' ); ?></p>
 	</div>
 	

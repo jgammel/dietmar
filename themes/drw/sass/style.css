@@ -1145,8 +1145,7 @@ body.single-portfolio #content {
   font-size: 14px;
   min-height: calc(100vh - 88px); }
   body.single-portfolio #content h2.entry-title {
-    color: #fff;
-    font-size: 14px; }
+    color: #fff; }
   body.single-portfolio #content .entry-content {
     float: left;
     width: calc(75% - 60px);

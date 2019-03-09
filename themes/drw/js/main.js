@@ -4,7 +4,7 @@ $(document).ready(function(){
     slidesToShow: 6,
 	slidesToScroll: 1,
 	arrows: true,
-	variableWidth: false,
+	variableWidth: true,
 	responsive: [
 	{
       breakpoint: 1500,
