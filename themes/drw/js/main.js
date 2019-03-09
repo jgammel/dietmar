@@ -1,14 +1,24 @@
 $(document).ready(function(){
   $('#clothesline-wrapper').slick({
     infinite:false,
-    slidesToShow: 4,
+    slidesToShow: 6,
 	slidesToScroll: 1,
 	arrows: true,
+	variableWidth: false,
 	responsive: [
+	{
+      breakpoint: 1500,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        infinite: false,
+        dots: false
+      }
+    },	
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         infinite: false,
         dots: false
@@ -17,14 +27,14 @@ $(document).ready(function(){
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 2,
+        slidesToShow: 3,
         slidesToScroll: 1,
       }
     },
     {
       breakpoint: 450,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 2,
         slidesToScroll: 1,
       }
     }

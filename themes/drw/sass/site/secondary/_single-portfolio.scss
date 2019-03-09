@@ -4,7 +4,7 @@ body.single-portfolio{
 	}
 	#content{
 		color: #fff;
-		background: #7b6c54;
+		background: #c0b7a9;
 		font-size: 14px;
 		min-height: calc(100vh - 88px);
 		h2.entry-title{
@@ -98,17 +98,17 @@ body.single-portfolio{
 
 /* PORTFOLIO LIGHTBOX */
 #lightbox{
-	background: #7b6c54;
+	background: #c0b7a9;
 	color: #fff;
 	opacity: 0;
 	width: 100vw;
 	min-height: 100vh;
-	height: calc(100% + 112px);
+	min-height: calc(100% + 167px);
 	position: absolute;
-	top: 112px;
+	top: 167px;
 	left: 0;
 	z-index: 10000;
-	padding: 1rem 1rem 0 0;
+	padding: 1.5rem 0 0 0;
 	.hentry{
 		max-width: 700px;
 	}

@@ -253,7 +253,7 @@ h2.entry-title {
 p.site-title, p.site-logo {
   background: #d2232a;
   color: white;
-  padding: 2px 0; }
+  padding: 7px 0 1em 0; }
   p.site-title a, p.site-logo a {
     color: white;
     text-decoration: none;
@@ -272,13 +272,7 @@ p.site-logo {
   overflow: hidden;
   width: 25%;
   margin-top: 0;
-  font-family: "UniversLT-Condensed", sans-serif;
-  border-right: 8px solid white;
-  padding: 2px 0; }
-
-@media screen and (max-width: 37.5em) {
-  p.site-logo {
-    border-right: 8px solid #d2232a; } }
+  font-family: "UniversLT-Condensed", sans-serif; }
 
 p.site-title {
   float: right;
@@ -502,7 +496,7 @@ a {
   z-index: 10009; }
   @media screen and (min-width: 37.5em) {
     .main-navigation {
-      padding-left: 25%; } }
+      padding-left: calc(25% + 9px); } }
   .main-navigation.nav-expanded {
     box-shadow: 5px 5px 5px #e2e1e1;
     background: rgba(255, 255, 255, 0.95); }
@@ -824,7 +818,7 @@ a {
   width: 100%; }
 
 .site-main {
-  margin: 0 0 0 calc(25% + 9px); }
+  margin: 0 0 100px calc(25% + 9px); }
 
 @media screen and (max-width: 37.5em) {
   .site-main {
@@ -1144,7 +1138,7 @@ body.single-portfolio .hentry {
 
 body.single-portfolio #content {
   color: #fff;
-  background: #7b6c54;
+  background: #c0b7a9;
   font-size: 14px;
   min-height: calc(100vh - 88px); }
   body.single-portfolio #content h2.entry-title {
@@ -1210,17 +1204,17 @@ body.single-portfolio #content {
 
 /* PORTFOLIO LIGHTBOX */
 #lightbox {
-  background: #7b6c54;
+  background: #c0b7a9;
   color: #fff;
   opacity: 0;
   width: 100vw;
   min-height: 100vh;
-  height: calc(100% + 112px);
+  min-height: calc(100% + 167px);
   position: absolute;
-  top: 112px;
+  top: 167px;
   left: 0;
   z-index: 10000;
-  padding: 1rem 1rem 0 0; }
+  padding: 1.5rem 0 0 0; }
   #lightbox .hentry {
     max-width: 700px; }
   #lightbox #lightbox-exit {
