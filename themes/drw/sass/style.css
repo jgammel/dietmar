@@ -1098,7 +1098,8 @@ a {
       .entry-summary #clothesline .clothesline-item a,
       .entry-footer #clothesline .clothesline-item a {
         text-decoration: none;
-        color: #999; }
+        color: #999;
+        display: block; }
         .page-content #clothesline .clothesline-item a:hover,
         .entry-content #clothesline .clothesline-item a:hover,
         .entry-summary #clothesline .clothesline-item a:hover,

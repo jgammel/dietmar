@@ -165,6 +165,7 @@ $(document).ready(function(){
 		arrows: true,
 		adaptiveHeight: true,
 		centerMode: false,
+		lazyLoad: 'ondemand',
 	});
 	if( $('ul.image-gallery').children().length > 1){
 	  $('ul.image-gallery').slick({
