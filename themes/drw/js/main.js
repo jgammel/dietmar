@@ -187,7 +187,9 @@ $(document).ready(function(){
   }
   function unslickify(){
 	  $('#portfolio-slider').slick('unslick');
-	  $('ul.image-gallery').slick('unslick');
+	  if( $('ul.image-gallery').children().length > 1){
+	  	$('ul.image-gallery').slick('unslick');
+	  }
   }
   
   function genreSortify(dataName){
