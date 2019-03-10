@@ -49,12 +49,12 @@
 		?>
 		<div class="post-navigation-next">
 		<?php
-			next_post_link();
+			next_post_link('%link', '▲');
 		?>
 		</div>
 		<div class="post-navigation-prev">
 		<?php
-			previous_post_link();
+			previous_post_link('%link', '▼');
 		?>
 		</div>
 		<?php
