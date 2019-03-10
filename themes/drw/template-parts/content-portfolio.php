@@ -35,12 +35,12 @@
 		?>
 			<div class="post-navigation-next">
 		<?php
-			next_post_link('« %link', '%title', true, ' ', $page_tax);
+			next_post_link('%link', '▲', true, ' ', $page_tax);
 		?>
 			</div>
 			<div class="post-navigation-prev">
 		<?php
-			previous_post_link('%link »', '%title', true, ' ', $page_tax);
+			previous_post_link('%link', '▼', true, ' ', $page_tax);
 		?>
 			</div>
 		<?php

@@ -87,10 +87,13 @@ body.single-portfolio{
 				max-width: 175px;
 				float: right;
 				clear: right;
+				.post-navigation-next, .post-navigation-prev{
+					display: inline-block;
+				}
 				a{
-					color: black;
+					color: white;
 					&:hover{
-						color: #999;
+						color: #d2232a;
 					}
 				}
 			}
@@ -238,10 +241,13 @@ body.single-portfolio{
 			max-width: 175px;
 			float: right;
 			clear: right;
+			.post-navigation-next, .post-navigation-prev{
+				display: inline-block;
+			}
 			a{
-				color: black;
+				color: white;
 				&:hover{
-					color: #999;
+					color: #d2232a;
 				}
 			}
 		}

@@ -1203,10 +1203,12 @@ body.single-portfolio #content {
       max-width: 175px;
       float: right;
       clear: right; }
+      body.single-portfolio #content .entry-header .portfolio-details .post-navigation-next, body.single-portfolio #content .entry-header .portfolio-details .post-navigation-prev {
+        display: inline-block; }
       body.single-portfolio #content .entry-header .portfolio-details a {
-        color: black; }
+        color: white; }
         body.single-portfolio #content .entry-header .portfolio-details a:hover {
-          color: #999; }
+          color: #d2232a; }
   @media screen and (max-width: 37.5em) {
     body.single-portfolio #content .entry-header {
       width: 100%;
@@ -1321,10 +1323,12 @@ body.single-portfolio #content {
       max-width: 175px;
       float: right;
       clear: right; }
+      #lightbox .entry-header .portfolio-details .post-navigation-next, #lightbox .entry-header .portfolio-details .post-navigation-prev {
+        display: inline-block; }
       #lightbox .entry-header .portfolio-details a {
-        color: black; }
+        color: white; }
         #lightbox .entry-header .portfolio-details a:hover {
-          color: #999; }
+          color: #d2232a; }
   @media screen and (max-width: 37.5em) {
     #lightbox .entry-header {
       width: 100%;
