@@ -82,9 +82,9 @@
 				}
 			}
 			p{
-				font-size: 14px;
+				font-size: 0.75rem;
 				display: block;
-				margin: 0.25em 0;
+				margin: 0.5em 0;
 			}
 		}
 	}
@@ -95,6 +95,18 @@
 	}
 }
 
+.entry-header-archive{
+	h3.entry-title{
+		font-size: 1rem;
+		margin: 1rem 0 0 0;
+	}
+}
+
+.entry-content-archive{
+	p{
+		margin: 0;
+	}
+}
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;

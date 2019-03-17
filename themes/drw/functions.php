@@ -436,15 +436,15 @@ function portfolio_shortcode( $atts ){
 				$output .= '<div class="clothesline-item">';
 				$output .= '<a class="lightbox" href="'.get_permalink().'?nav_by='.$nav_by.'&term='.$the_client.'" style="max-width:'.$image_width.'px;">';
 				$output .= get_the_post_thumbnail();
-				$output .= '<p>';
+				$output .= '<p class="the-title">';
 				$output .= get_the_title();
 				$output .= '</p>';
 				if ($the_subtitle !== false){
-					$output .= '<p>';
+					$output .= '<p class="the-subtitle">';
 					$output .= $the_subtitle;
 					$output .= '</p>';
 				}
-				$output .= '<p>';
+				$output .= '<p class="the-year">';
 				$output .= implode($the_item_year);
 				$output .= '</p>';
 				$output .= '</a>';
