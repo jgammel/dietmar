@@ -253,7 +253,7 @@ h2.entry-title {
 p.site-title, p.site-logo {
   background: #d2232a;
   color: white;
-  padding: 7px 0 1em 0; }
+  padding: 1em 0 7px 0; }
   p.site-title a, p.site-logo a {
     color: white;
     text-decoration: none;
@@ -1187,6 +1187,10 @@ body.single-portfolio #content {
         float: left; }
         body.single-portfolio #content .entry-content #portfolio-slider .portfolio-main-item p {
           margin-bottom: 1rem; }
+          body.single-portfolio #content .entry-content #portfolio-slider .portfolio-main-item p img {
+            height: calc(90vh - 180px);
+            min-height: 10vh;
+            width: auto; }
   @media screen and (max-width: 37.5em) {
     body.single-portfolio #content .entry-content {
       width: 100%;
@@ -1307,6 +1311,10 @@ body.single-portfolio #content {
         float: left; }
         #lightbox .entry-content #portfolio-slider .portfolio-main-item p {
           margin-bottom: 1rem; }
+          #lightbox .entry-content #portfolio-slider .portfolio-main-item p img {
+            height: calc(90vh - 180px);
+            min-height: 10vh;
+            width: auto; }
   @media screen and (max-width: 37.5em) {
     #lightbox .entry-content {
       width: 100%;

@@ -55,6 +55,11 @@ body.single-portfolio{
 					float: left;
 					p{
 						margin-bottom: 1rem;
+						img{
+							height: calc(90vh - 180px);
+							min-height: 10vh;
+							width: auto;
+						}
 					}
 				}
 			}
@@ -209,6 +214,11 @@ body.single-portfolio{
 				float: left;
 				p{
 					margin-bottom: 1rem;
+					img{
+						height: calc(90vh - 180px);
+						min-height: 10vh;
+						width: auto;
+					}
 				}
 			}
 		}

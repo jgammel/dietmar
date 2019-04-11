@@ -163,7 +163,7 @@ $(document).ready(function(){
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		arrows: true,
-		adaptiveHeight: true,
+		adaptiveHeight: false,
 		centerMode: false,
 		lazyLoad: 'ondemand',
 	});
