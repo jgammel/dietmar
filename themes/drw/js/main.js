@@ -234,5 +234,37 @@ $(document).ready(function(){
 	  $('#colophon').removeClass("expanded");
 	  event.stopImmediatePropagation()
   })
+  
+  if($('#colophon').length > 0){
+	  $('#colophon').hide();
+	  var timelineWidth = $( window ).width();
+	  if(timelineWidth > 1480){ //length of timeline up to the 2010s
+		var emptySpace = timelineWidth - 1480; //how much blank space in the timeline?
+		var extraDecades = Math.ceil(emptySpace/200); //how many extra decades to add to fill the empty space?
+		var i;
+		var y = 20;
+		for (i = 1; i <= extraDecades; i++) { 
+		  var string ="<div class=\"decade\">";
+		  var string = string + "<div class=\"timeline-zero-year\"><p>20</p><div class=\"timeline-segment\"></div><strong>"+y+"</strong></div>";
+		  var segment = "<div class=\"timeline-segment\"></div>";
+		  var halfSegment = "<div class=\"timeline-segment half\"></div>";
+		  var s = 1;
+		    while(s < 10){
+				if (s == 5){
+					string = string + halfSegment;
+				}
+				else{
+					string = string + segment;
+				}
+				s++;
+			}
+		  string = string + "</div>";
+		  $( ".infinity" ).append(string);//append extra decades into .decade.infinity
+		  y += 10;
+		}
+	  }
+	  $('#colophon').show("slow");
+  }
+
 });
 	

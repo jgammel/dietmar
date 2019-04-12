@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer" style="display:none;">
 		<?php
 			//outputs a list of portfolio item by year
 			// WP_Query arguments
@@ -183,7 +183,8 @@
 				<div class="timeline-zero-year"><p>20</p><div class="timeline-segment"></div><strong>10</strong></div>
 				<?php timeline_dump($oughteens);?>
 			</div>
-			<div class="decade infinity">
+			<div class="infinity">
+			<!-- Javascript in mian.js will add extra timeline segments here as needed. -->
 			</div>
 		</div><!-- #timeline -->
 		<div id="timeline-sort-bar">

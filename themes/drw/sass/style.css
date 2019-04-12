@@ -326,7 +326,8 @@ big {
 --------------------------------------------------------------*/
 html {
   box-sizing: border-box;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  position: relative; }
 
 *,
 *:before,
