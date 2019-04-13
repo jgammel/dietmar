@@ -815,11 +815,11 @@ a {
 --------------------------------------------------------------*/
 .content-area {
   float: right;
-  margin: 0 0 0 -calc(25% + 9px);
+  margin: 0 0 0 calc(-25% + -9px);
   width: 100%; }
 
 .site-main {
-  margin: 10vh 0 100px calc(25% + 9px); }
+  margin: 10vh 0 0 calc(25% + 9px); }
 
 @media screen and (max-width: 37.5em) {
   .site-main {
@@ -828,7 +828,26 @@ a {
 .site-content .widget-area {
   float: left;
   overflow: hidden;
-  width: calc(25% + 9px); }
+  width: calc(25% + 9px);
+  padding: 0 50px;
+  margin-top: 10vh; }
+  .site-content .widget-area h2 {
+    font-size: 1rem;
+    margin-top: 0;
+    font-weight: normal; }
+  .site-content .widget-area .jaw_widget {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .site-content .widget-area .jaw_widget ul {
+      margin: 0.25rem 0;
+      padding: 0.5rem 0 0 1rem;
+      list-style: none; }
+    .site-content .widget-area .jaw_widget .jaw_posts {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #ccc; }
+      .site-content .widget-area .jaw_widget .jaw_posts:last-of-type {
+        border-bottom: 0; }
 
 .site-footer {
   clear: both;
