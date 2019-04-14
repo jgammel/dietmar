@@ -35,4 +35,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
+in_category('reflections-follies') ? get_sidebar() : null;
 get_footer('overview');
