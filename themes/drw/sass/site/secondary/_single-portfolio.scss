@@ -43,7 +43,7 @@ body.single-portfolio{
 			#portfolio-slider{
 				position: relative;
 				.slick-prev, .slick-next{
-					margin-top: 50%;
+					top: 50%;
 				}
 				.slick-prev{
 					left: 0;
@@ -187,7 +187,7 @@ body.single-portfolio{
 				li{
 					max-width: 70px;
 					display: inline-block;
-					padding: 0 0 25px 25px;
+					padding: 0 25px 0 0;
 					margin: 0;
 					img{
 						box-shadow: 1px 1px 2px 1px #695c49;
@@ -202,7 +202,7 @@ body.single-portfolio{
 		#portfolio-slider{
 			position: relative;
 			.slick-prev, .slick-next{
-				margin-top: 50%;
+				top: 50%;
 			}
 			.slick-prev{
 				left: 0;
