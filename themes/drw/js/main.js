@@ -224,14 +224,30 @@ $(document).ready(function(){
   });
   
   $('#colophon').bind("mouseenter", function(event){
-	  $('body').addClass("scrollaway");
+	  //$('body').addClass("scrollaway");
 	  $(this).addClass("expanded");
-	  event.stopImmediatePropagation()
+	  translateFooter($(this));
+	  event.stopImmediatePropagation();
   });
   
+  function translateFooter(footer){
+	  var height = footer.outerHeight();
+	  var heightArray = [];
+	  var timelineItemContainer = footer.find('.timeline-item-container');
+	  for(var i=0; i < timelineItemContainer.length; i++){
+		  heightArray.push($(timelineItemContainer[i]).height());
+	  }
+	  var timelineItemHeight = (Math.max.apply(Math, heightArray));
+	  height = -(height + timelineItemHeight);
+
+	  //translateY the footer by negative height
+	  footer.css("transform","translateY("+height+"px)");
+  }
+  
   $('#content').bind("mouseenter", function(event){
-	  $('body').removeClass("scrollaway");
+	  //$('body').removeClass("scrollaway");
 	  $('#colophon').removeClass("expanded");
+	  $('#colophon').css("transform","");
 	  event.stopImmediatePropagation()
   })
   

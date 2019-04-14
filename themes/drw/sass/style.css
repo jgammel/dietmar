@@ -856,12 +856,20 @@ a {
   bottom: 0;
   width: 100vw;
   background: white;
-  padding-top: 50px; }
-  .site-footer.expanded {
-    position: relative;
-    margin-top: -50px; }
-    .site-footer.expanded #timeline-sort-bar {
-      opacity: 1; }
+  padding-top: 50px;
+  -webkit-transition: all 1s;
+  /* Safari */
+  transition: all 1s; }
+  .site-footer:before {
+    content: '';
+    background: white;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    z-index: -1; }
+  .site-footer.expanded #timeline-sort-bar {
+    opacity: 1; }
   .site-footer * {
     display: inherit;
     vertical-align: bottom; }
