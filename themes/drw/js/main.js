@@ -279,7 +279,9 @@ $(document).ready(function(){
 		  y += 10;
 		}
 	  }
-	  $('#colophon').show("slow");
+	  if (timelineWidth >= 600){ //only show footer on desktop
+	  	$('#colophon').show("slow");
+	  }
   }
 
 });
