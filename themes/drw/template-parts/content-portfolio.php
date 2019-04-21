@@ -86,7 +86,9 @@
 					foreach ($portfolio_nav_array as $portfolio_nav_item){
 						echo("<div class=\"portfolio-main-item\">");
 						echo("<p>");
+						echo("<a class=\"expand\" target=\"_blank\" href=\"".wp_get_attachment_url( $portfolio_nav_item )."\">");
 						echo wp_get_attachment_image($portfolio_nav_item, "full", false);
+						echo("</a>");
 						echo("</p>");
 						echo("</div>");
 					}

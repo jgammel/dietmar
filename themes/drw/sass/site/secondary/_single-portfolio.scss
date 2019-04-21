@@ -53,6 +53,10 @@ body.single-portfolio{
 				}
 				.portfolio-main-item{
 					float: left;
+					a.expand{
+						cursor: zoom-in;
+						cursor: -webkit-zoom-in;
+					}
 					p{
 						margin-bottom: 1rem;
 						img{
@@ -212,6 +216,10 @@ body.single-portfolio{
 			}
 			.portfolio-main-item{
 				float: left;
+				a.expand{
+					cursor: zoom-in;
+					cursor: -webkit-zoom-in;
+				}
 				p{
 					margin-bottom: 1rem;
 					img{

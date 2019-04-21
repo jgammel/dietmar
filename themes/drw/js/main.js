@@ -74,6 +74,7 @@ $(document).ready(function(){
   $('p.preview-text a.read-more').bind("click", function(){
 	  ShowHideContent();
   });
+
   
   function ShowHideContent(){
 	  if($('.hide-the-content').length > 0){
@@ -192,6 +193,7 @@ $(document).ready(function(){
 	  	$('ul.image-gallery').slick('unslick');
 	  }
   }
+  
   
   function genreSortify(dataName){
 	  var timelineData = $('.timeline-data');

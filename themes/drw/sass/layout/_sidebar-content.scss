@@ -2,10 +2,11 @@
 	float: right;
 	margin: 0 0 0 calc(-25% + -9px);
 	width: $size__site-main;
+	padding-bottom: 125px;
 }
 
 .site-main {
-	margin: 10vh 0 0 $size__site-sidebar;
+	margin: 50px 0 0 $size__site-sidebar;
 }
 @media screen and (max-width: 37.5em) {
 	.site-main{
