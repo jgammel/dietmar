@@ -117,4 +117,13 @@
 		font-size: 1.5em;
 		font-weight: bold;
 	}
+	.post-categories{
+		margin-bottom: 1rem;
+		a{
+			margin-left: 0.5rem;
+			&:first-of-type{
+				margin-left: 0;
+			}
+		}
+	}
 }
