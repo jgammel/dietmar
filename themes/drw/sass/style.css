@@ -1227,9 +1227,9 @@ body.single-portfolio #content {
         body.single-portfolio #content .entry-content #portfolio-slider .portfolio-main-item p {
           margin-bottom: 1rem; }
           body.single-portfolio #content .entry-content #portfolio-slider .portfolio-main-item p img {
-            height: calc(90vh - 180px);
-            min-height: 10vh;
-            width: auto; }
+            max-height: calc(90vh - 180px);
+            width: auto;
+            max-width: 100%; }
   @media screen and (max-width: 37.5em) {
     body.single-portfolio #content .entry-content {
       width: 100%;
@@ -1354,9 +1354,9 @@ body.single-portfolio #content {
         #lightbox .entry-content #portfolio-slider .portfolio-main-item p {
           margin-bottom: 1rem; }
           #lightbox .entry-content #portfolio-slider .portfolio-main-item p img {
-            height: calc(90vh - 180px);
-            min-height: 10vh;
-            width: auto; }
+            max-height: calc(90vh - 180px);
+            width: auto;
+            max-width: 100%; }
   @media screen and (max-width: 37.5em) {
     #lightbox .entry-content {
       width: 100%;

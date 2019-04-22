@@ -60,9 +60,9 @@ body.single-portfolio{
 					p{
 						margin-bottom: 1rem;
 						img{
-							height: calc(90vh - 180px);
-							min-height: 10vh;
+							max-height: calc(90vh - 180px);
 							width: auto;
+							max-width: 100%;
 						}
 					}
 				}
@@ -223,9 +223,9 @@ body.single-portfolio{
 				p{
 					margin-bottom: 1rem;
 					img{
-						height: calc(90vh - 180px);
-						min-height: 10vh;
+						max-height: calc(90vh - 180px);
 						width: auto;
+						max-width: 100%;
 					}
 				}
 			}
