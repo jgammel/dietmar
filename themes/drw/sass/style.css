@@ -1275,7 +1275,7 @@ body.single-portfolio #content {
 
 /* PORTFOLIO LIGHTBOX */
 #lightbox {
-  background: #c0b7a9;
+  background: rgba(192, 183, 169, 0.98);
   color: #fff;
   opacity: 0;
   width: 100vw;
@@ -1293,12 +1293,16 @@ body.single-portfolio #content {
   #lightbox #lightbox-exit {
     z-index: 10001;
     background: transparent;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     position: absolute;
-    top: 0;
-    right: 0;
-    display: table; }
+    top: -20px;
+    right: 20px;
+    display: table;
+    font-weight: bold;
+    border-radius: 100%;
+    background: #c0b7a9;
+    border: 3px solid white; }
     #lightbox #lightbox-exit span {
       display: table-cell;
       vertical-align: middle;

@@ -101,7 +101,7 @@ $(document).ready(function(){
 	  //windowHeight = windowHeight.toString() + "px";
 	  $.get(obj.attr('href'), function(data){
 		  var the_lightbox = "<div id=\"lightbox\"></div>";
-		  var exit_button = "<div id=\"lightbox-exit\"><span>X</span></div>";
+		  var exit_button = "<div id=\"lightbox-exit\"><span>x</span></div>";
 		  var html_start = data.indexOf("<div id=\"primary\" class=\"content-area\">");
 		  var html_end = data.indexOf("</div><!-- #primary -->");
 		  var html = data.substring(html_start, html_end);
