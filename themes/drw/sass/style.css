@@ -960,7 +960,8 @@ a {
               margin: 0px;
               border-radius: 100%;
               transform: scale(1);
-              transition: transform 0.2s ease; }
+              transition: transform 0.2s ease;
+              cursor: pointer; }
               .site-footer #timeline .decade .timeline-item-container .timeline-ball:hover {
                 background: #000;
                 transform: scale(1.25);
@@ -1302,7 +1303,8 @@ body.single-portfolio #content {
     font-weight: bold;
     border-radius: 100%;
     background: #c0b7a9;
-    border: 3px solid white; }
+    border: 3px solid white;
+    cursor: pointer; }
     #lightbox #lightbox-exit span {
       display: table-cell;
       vertical-align: middle;
