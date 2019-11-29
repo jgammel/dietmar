@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('#clothesline-wrapper').slick({
+  $('#clothesline-wrapper--XXXDEPRECATED').slick({
     infinite:false,
     slidesToShow: 6,
 	slidesToScroll: 1,
@@ -42,6 +42,11 @@ $(document).ready(function(){
     // settings: "unslick"
     // instead of a settings object
   ]
+  });
+  
+  $('#clothesline-wrapper').masonry({
+	  itemSelector: '.clothesline-item',
+	  columnWidth: 200,
   });
   
   $('#portfolio-slider').slick({

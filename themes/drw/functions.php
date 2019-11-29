@@ -538,6 +538,8 @@ function drw_scripts() {
 	
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/libs/slick/slick.min.js', array('jQuery'), '20151215', false );
 	
+	wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/libs/masonry.pkgd.js', array('jQuery'), '20151215', false );
+	
 	wp_enqueue_script( 'drw-site', get_template_directory_uri() . '/js/main.js', array('jQuery'), '20151215', true );
 
 	wp_enqueue_script( 'drw-navigation', get_template_directory_uri() . '/js/navigation.js', array('jQuery'), '20151215', true );
