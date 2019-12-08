@@ -139,11 +139,11 @@
 					echo("<a href=\"{$specific_link}\"class=\"timeline-ball\">");
 					echo("</a>");
 					echo("<div class=\"hover-box hidden\">");
-					echo("<div class=\"title\">");
-					echo($year['title']);
-					echo("</div>");
 					echo("<div class=\"thumbnail\">");
 					echo($year['thumbnail']);
+					echo("</div>");
+					echo("<div class=\"title\">");
+					echo($year['title']);
 					echo("</div>");
 					echo("</div>");
 					echo("</div>"); // < /timeline-data >

@@ -211,12 +211,25 @@
 			font-size: 12px;
 			width: 100%;
 			padding: 3px;
+			width: 210px;
 			background: rgba(255, 255, 255, 0.5);
 			border: 1px solid #ccc;
-			min-width: 200px;
-			.thumbnail img{
-				width: 50px;
-				height: auto;
+			.title{
+				display: inline-block;
+				vertical-align: middle;
+				width: 150px;
+				
+			}
+			.thumbnail{
+				display: inline-block;
+				vertical-align: middle;
+				width: 45px;
+				margin-right: 5px;
+				img{
+					width: 100%;
+					display: block;
+					height: auto;
+				}
 			}
 		}
 	}
