@@ -38,6 +38,7 @@
 					$the_date = get_post_meta($post->ID, 'drw_box_year', true);
 					$the_title = get_the_title();
 					$the_link = get_the_permalink();
+					$the_thumbnail = get_the_post_thumbnail();
 					$term_args = array(
 						'fields' => 'slugs',
 					);
@@ -47,6 +48,7 @@
 					$item_array['title'] = $the_title;
 					$item_array['link'] = $the_link;
 					$item_array['genre'] = $the_genre;
+					$item_array['thumbnail'] = $the_thumbnail;
 					array_push($timeline_array, $item_array);
 					?>
 					<?php
@@ -139,6 +141,9 @@
 					echo("<div class=\"hover-box hidden\">");
 					echo("<div class=\"title\">");
 					echo($year['title']);
+					echo("</div>");
+					echo("<div class=\"thumbnail\">");
+					echo($year['thumbnail']);
 					echo("</div>");
 					echo("</div>");
 					echo("</div>"); // < /timeline-data >

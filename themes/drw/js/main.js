@@ -46,7 +46,9 @@ $(document).ready(function(){
   
   $('#clothesline-wrapper').masonry({
 	  itemSelector: '.clothesline-item',
-	  columnWidth: 200,
+	  gutter: 10,
+	  horizontalOrder: true,
+	  //columnWidth: 150,
   });
   
   $('#portfolio-slider').slick({

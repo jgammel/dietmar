@@ -214,6 +214,10 @@
 			background: rgba(255, 255, 255, 0.5);
 			border: 1px solid #ccc;
 			min-width: 200px;
+			.thumbnail img{
+				width: 50px;
+				height: auto;
+			}
 		}
 	}
 	#timeline-sort-bar{

@@ -421,6 +421,8 @@ a:hover, a:active { outline: 0; }
 
 .site-footer #timeline .hover-box { display: none; top: 20px; left: auto; right: auto; position: absolute; z-index: 1; font-size: 12px; width: 100%; padding: 3px; background: rgba(255, 255, 255, 0.5); border: 1px solid #ccc; min-width: 200px; }
 
+.site-footer #timeline .hover-box .thumbnail img { width: 50px; height: auto; }
+
 .site-footer #timeline-sort-bar { margin: 0 0 0 auto; display: block; position: absolute; bottom: -100%; right: -460px; opacity: 0; }
 
 .site-footer #timeline-sort-bar > div { display: inline-block; padding: 10px 10px 20px 10px; border: 1px solid #9c9185; font-size: 10px; color: #796957; width: 200px; max-width: 90px; background: rgba(255, 255, 255, 0.75); vertical-align: top; }
@@ -450,13 +452,15 @@ a:hover, a:active { outline: 0; }
 --------------------------------------------------------------*/
 .sticky { display: block; }
 
-.hentry { margin: 0 0 1.5em; max-width: 500px; }
+.hentry { margin: 0 0 1.5em; }
+
+.hentry .entry-content > p { max-width: 500px; }
 
 .updated:not(.published) { display: none; }
 
 #content { margin-top: 88px; min-height: calc(100vh - 132px); }
 
-.page-content, .entry-content, .entry-summary, .entry-footer { margin: 0; overflow: hidden; }
+.page-content, .entry-content, .entry-summary, .entry-footer { margin: 0; }
 
 .page-content .post-edit-link, .entry-content .post-edit-link, .entry-summary .post-edit-link, .entry-footer .post-edit-link { display: block; }
 
@@ -470,17 +474,19 @@ a:hover, a:active { outline: 0; }
 
 .page-content .show-the-content, .entry-content .show-the-content, .entry-summary .show-the-content, .entry-footer .show-the-content { visibility: visible; height: auto; max-height: 1000vh; -webkit-transition: max-height 2.5s linear; /* Safari */ transition: max-height 2.5s linear; }
 
-.page-content #clothesline, .entry-content #clothesline, .entry-summary #clothesline, .entry-footer #clothesline { margin-top: 1.5em; width: calc(100vw - 25%); margin-left: -13px; }
+.page-content #clothesline, .entry-content #clothesline, .entry-summary #clothesline, .entry-footer #clothesline { margin-top: 1.5em; margin-left: -13px; }
 
-.page-content #clothesline .clothesline-item, .entry-content #clothesline .clothesline-item, .entry-summary #clothesline .clothesline-item, .entry-footer #clothesline .clothesline-item { padding: 0 13px; }
+.page-content #clothesline .clothesline-item, .entry-content #clothesline .clothesline-item, .entry-summary #clothesline .clothesline-item, .entry-footer #clothesline .clothesline-item { padding: 0 13px; margin-bottom: 10px; }
 
 .page-content #clothesline .clothesline-item a, .entry-content #clothesline .clothesline-item a, .entry-summary #clothesline .clothesline-item a, .entry-footer #clothesline .clothesline-item a { text-decoration: none; color: #999; display: block; }
 
 .page-content #clothesline .clothesline-item a:hover, .entry-content #clothesline .clothesline-item a:hover, .entry-summary #clothesline .clothesline-item a:hover, .entry-footer #clothesline .clothesline-item a:hover { color: #000; }
 
-.page-content #clothesline .clothesline-item a img, .entry-content #clothesline .clothesline-item a img, .entry-summary #clothesline .clothesline-item a img, .entry-footer #clothesline .clothesline-item a img { margin-bottom: 20px; box-shadow: 1px 1px 2px 1px #ddd; -webkit-box-shadow: 1px 1px 2px 1px #ddd; }
+.page-content #clothesline .clothesline-item a img, .entry-content #clothesline .clothesline-item a img, .entry-summary #clothesline .clothesline-item a img, .entry-footer #clothesline .clothesline-item a img { margin-top: 20px; box-shadow: 1px 1px 2px 1px #ddd; -webkit-box-shadow: 1px 1px 2px 1px #ddd; }
 
-.page-content #clothesline .clothesline-item p, .entry-content #clothesline .clothesline-item p, .entry-summary #clothesline .clothesline-item p, .entry-footer #clothesline .clothesline-item p { font-size: 0.75rem; display: block; margin: 0.5em 0; }
+.page-content #clothesline .clothesline-item p, .entry-content #clothesline .clothesline-item p, .entry-summary #clothesline .clothesline-item p, .entry-footer #clothesline .clothesline-item p { font-size: 0.85rem; display: block; margin: 0.5em 0; }
+
+.page-content #clothesline .clothesline-item p.the-title, .entry-content #clothesline .clothesline-item p.the-title, .entry-summary #clothesline .clothesline-item p.the-title, .entry-footer #clothesline .clothesline-item p.the-title { font-size: 1rem; }
 
 @media screen and (max-width: 37.5em) { .page-content #clothesline, .entry-content #clothesline, .entry-summary #clothesline, .entry-footer #clothesline { width: calc(100vw - 13px); } }
 
@@ -558,7 +564,7 @@ body.single-portfolio #content .entry-header .portfolio-details a:hover { color:
 body.single-portfolio #content .entry-footer { clear: both; }
 
 /* PORTFOLIO LIGHTBOX */
-#lightbox { background: rgba(192, 183, 169, 0.98); color: #fff; opacity: 0; width: 100vw; min-height: 100vh; min-height: calc(100% + 167px); position: absolute; top: 135px; left: 0; z-index: 10000; padding: 1.5rem 0 0 0; }
+#lightbox { background: #c0b7a9; color: #fff; opacity: 0; width: 100vw; min-height: 100vh; min-height: calc(100% + 167px); position: absolute; top: 135px; left: 0; z-index: 10000; padding: 1.5rem 0 0 0; }
 
 #lightbox #main { margin-left: 0; }
 
