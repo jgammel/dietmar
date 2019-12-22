@@ -49,13 +49,13 @@
 	position: fixed;
 	bottom: 0;
 	width: 100vw;
-	background: white;
+	background: $color__background-body;
 	padding-top: 50px;
 	-webkit-transition: all 1s; /* Safari */
 	transition: all 1s;
 	&:before{
 		content: '';
-		background: white;
+		background: $color__background-body;
 		position: absolute;
 		width: 100vw;
 		height: 100vh;
@@ -63,6 +63,7 @@
 		z-index: -1;
 	}
 	&.expanded{
+		box-shadow: 0px 0px 20px 0px #3e3832;
 		#timeline-sort-bar{
 			opacity: 1;
 		}
@@ -70,6 +71,25 @@
 	*{
 		display: inherit;
 		vertical-align: bottom;
+	}
+	button#footer-show-hide{
+		margin: 0 auto;
+		background: transparent;
+		-webkit-appearance: none;
+		color: #D2232A;
+		font-size: 2rem;
+		border: none;
+		-ms-transform: translateY(-50px);
+		-webkit-transform: translateY(-50px);
+		transform: translateY(-50px);
+		&:focus{
+			-ms-transform: translateY(-50px) rotate(60deg); /* IE 9 */
+			-webkit-transform: translateY(-50px) rotate(60deg); /* Safari prior 9.0 */
+			transform: translateY(-50px) rotate(60deg); /* Standard syntax */
+			transition: transform 0.5s;
+			border: none;
+			outline: none;
+		}
 	}
 	p{
 		margin: 0;
@@ -121,7 +141,8 @@
 					left: -15px;
 				}
 				> strong{
-					right: -16px;
+					right: -19px;
+					font-family: "UniversLT-Condensed";
 				}
 				.timeline-segment{
 					height: 80px;
@@ -177,14 +198,14 @@
 					.timeline-ball{
 						width: 14px;
 						height: 14px;
-						background: #D2232A;
+						background: $color__text-main;
 						margin: 0px;
 						border-radius: 100%;
 						transform: scale(1);
 						transition: transform 0.2s ease;
 						cursor: pointer;
 						&:hover{
-							background: #000;
+							background: #D2232A;
 							transform: scale(1.25);
 							transition: transform 0.2s ease;
 						}
@@ -208,22 +229,23 @@
 			right: auto;
 			position: absolute;
 			z-index: 1;
-			font-size: 12px;
 			width: 100%;
 			padding: 3px;
-			width: 210px;
-			background: rgba(255, 255, 255, 0.5);
-			border: 1px solid #ccc;
+			width: 230px;
+			background: rgba(255, 255, 255, 1);
+			//border: 1px solid #ccc;
+			line-height: 1.25rem;
+			font-size: 14px;
 			.title{
 				display: inline-block;
-				vertical-align: middle;
+				vertical-align: top;
 				width: 150px;
 				
 			}
 			.thumbnail{
 				display: inline-block;
-				vertical-align: middle;
-				width: 45px;
+				vertical-align: top;
+				width: 65px;
 				margin-right: 5px;
 				img{
 					width: 100%;

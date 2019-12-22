@@ -28,18 +28,17 @@
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
 			<?php
-				get_search_form();
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',
 					'menu_id'        => 'primary-menu',
 				) );
 			?>
 		</nav><!-- #site-navigation -->
+		<?php get_search_form(); ?>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
 	<div class="site-branding">
-		<p class="site-logo"><a href="/" rel="home">D<span>/</span>R<span>/</span>W</a></p>
-		<p class="site-title"><?php bloginfo( 'name' ); ?></p>
+		<p class="site-title"><a href="/" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 	</div>
 	

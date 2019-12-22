@@ -12,8 +12,12 @@
 ?>
 
 	</div><!-- #content -->
-
 	<footer id="colophon" class="site-footer" style="display:none;">
+<!--
+		<button id="footer-show-hide">
+			<span id="show-hide-label">▲</span>
+		</button>
+-->
 		<?php
 			//outputs a list of portfolio item by year
 			// WP_Query arguments

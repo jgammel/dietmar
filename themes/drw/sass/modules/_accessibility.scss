@@ -15,7 +15,7 @@
 		color: $color__text-screen;
 		display: block;
 		@include font-size(0.875);
-		font-weight: bold;
+		font-family: $font__bold;
 		height: auto;
 		left: 5px;
 		line-height: normal;

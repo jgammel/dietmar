@@ -67,7 +67,8 @@ abbr[title] {
 
 b,
 strong {
-	font-weight: bold;
+	font-family: $font__bold;
+	letter-spacing: 1px;
 }
 
 dfn {

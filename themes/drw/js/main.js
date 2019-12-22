@@ -216,7 +216,7 @@ $(document).ready(function(){
 	  timelineDot.removeAttr( 'style' );
 	  timelineData.filter(function(){
 		 return $(this).attr('data-name').match(dataName); 
-	  }).children('.timeline-ball').css('background', '#000000');
+	  }).children('.timeline-ball').css('background', '#d2232a');
   }
   
   $('#timeline-sort-bar .sort-button').bind("click", function(e){
@@ -247,13 +247,15 @@ $(document).ready(function(){
 		  heightArray.push($(timelineItemContainer[i]).height());
 	  }
 	  var timelineItemHeight = (Math.max.apply(Math, heightArray));
-	  height = -(height + timelineItemHeight);
+	  var windowHeight = $( window ).height();
+	  //height = -(height + timelineItemHeight);
+	  height = -((windowHeight - height) - 80);
 
 	  //translateY the footer by negative height
 	  footer.css("transform","translateY("+height+"px)");
   }
   
-  $('#content').bind("mouseenter", function(event){
+  $('#masthead').bind("mouseenter", function(event){
 	  //$('body').removeClass("scrollaway");
 	  $('#colophon').removeClass("expanded");
 	  $('#colophon').css("transform","");

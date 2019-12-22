@@ -4,7 +4,7 @@
 
 .hentry {
 	margin: 0 0 1.5em;
-	.entry-content > p{
+	.entry-content > p, .entry-content .show-the-content > p, .entry-summary > p{
 		max-width: 500px;
 	}
 }
@@ -108,7 +108,7 @@
 .single-post{
 	h2.entry-title{
 		font-size: 1.5em;
-		font-weight: bold;
+		font-family: $font__bold;
 	}
 	.post-categories{
 		margin-bottom: 1rem;

@@ -128,11 +128,13 @@
 		});
 	});
 	
+/*
 	container.bind("mouseleave", function(e){
 		container.find('ul.sub-menu.slide-in').removeClass("slide-in");
 		container.removeClass("nav-expanded");
 		secondTier.removeClass("carrot-added");	
 	});
+*/
 	
 	firstTier.bind('click', function(e){
 		e.preventDefault();

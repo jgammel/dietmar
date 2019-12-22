@@ -431,22 +431,22 @@ function portfolio_shortcode( $atts ){
 				$query->the_post();
 				$the_item_year = get_post_meta(get_the_ID(), 'drw_box_year');
 				$the_subtitle = get_field('subtitle', get_the_ID());
-				$image_data = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()));
+				$image_data = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'medium');
 				$image_width = $image_data[1];
 				$output .= '<div class="clothesline-item">';
-				$output .= '<a class="lightbox" href="'.get_permalink().'?nav_by='.$nav_by.'&term='.$the_client.'" style="max-width:'.$image_width.'px;">';
+				$output .= '<a class="lightbox" href="'.get_permalink().'?nav_by='.$nav_by.'&term='.$the_client.'">';
 				$output .= get_the_post_thumbnail();
-				$output .= '<p class="the-title">';
-				$output .= get_the_title();
-				$output .= '</p>';
-				if ($the_subtitle !== false){
-					$output .= '<p class="the-subtitle">';
-					$output .= $the_subtitle;
-					$output .= '</p>';
-				}
-				$output .= '<p class="the-year">';
-				$output .= implode($the_item_year);
-				$output .= '</p>';
+				//$output .= '<p class="the-title">';
+				//$output .= get_the_title();
+				//$output .= '</p>';
+				//if ($the_subtitle !== false){
+				//	$output .= '<p class="the-subtitle">';
+				//	$output .= $the_subtitle;
+				//	$output .= '</p>';
+				//}
+				//$output .= '<p class="the-year">';
+				//$output .= implode($the_item_year);
+				//$output .= '</p>';
 				$output .= '</a>';
 				$output .= '</div>';
 			}
@@ -489,22 +489,22 @@ function portfolio_shortcode( $atts ){
 				$query->the_post();
 				$the_item_year = get_post_meta(get_the_ID(), 'drw_box_year');
 				$the_subtitle = get_field('subtitle', get_the_ID());
-				$image_data = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()));
+				$image_data = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'medium');
 				$image_width = $image_data[1];
 				$output .= '<div class="clothesline-item">';
-				$output .= '<a class="lightbox" href="'.get_permalink().'?nav_by='.$nav_by.'&term='.$the_genre.'" style="max-width:'.$image_width.'px;">';
+				$output .= '<a class="lightbox" href="'.get_permalink().'?nav_by='.$nav_by.'&term='.$the_genre.'">';
 				$output .= get_the_post_thumbnail();
-				$output .= '<p>';
-				$output .= get_the_title();
-				$output .= '</p>';
-				if ($the_subtitle !== false){
-					$output .= '<p>';
-					$output .= $the_subtitle;
-					$output .= '</p>';
-				}
-				$output .= '<p>';
-				$output .= implode($the_item_year);
-				$output .= '</p>';
+				//$output .= '<p>';
+				//$output .= get_the_title();
+				//$output .= '</p>';
+				//if ($the_subtitle !== false){
+				//	$output .= '<p>';
+				//	$output .= $the_subtitle;
+				//	$output .= '</p>';
+				//}
+				//$output .= '<p>';
+				//$output .= implode($the_item_year);
+				//$output .= '</p>';
 				$output .= '</a>';
 				$output .= '</div>';
 			}

@@ -7,22 +7,10 @@ h2.entry-title{
 	margin: 0;
 }
 p.site-title, p.site-logo{
-	background: #d2232a;
-	color: white;
+	color: #d2232a;
 	padding: 1em 0 7px 0;
 	a{
-		color: white;
 		text-decoration: none;
-		padding-left: 50px;
-		@media screen and (max-width: 37.5em) {
-			padding-left: 25px;
-		}
-	}
-	span{
-		color: #000;
-		margin: 0 2px;
-		font-family: $font__bold;
-		line-height: 0px;
 	}
 }
 p.site-logo{
@@ -39,5 +27,7 @@ p.site-title{
     overflow: hidden;
     width: 75%;
     margin-top: 0;
-    border-left: 9px solid #d2232a;
+    border-left: 9px solid #faf9f7;
+    font-family: $font__bold;
+    letter-spacing: 1px;
 }
