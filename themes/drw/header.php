@@ -34,11 +34,11 @@
 				) );
 			?>
 		</nav><!-- #site-navigation -->
+		<div class="site-branding">
+			<p class="site-title"><a href="/" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+		</div>
 		<?php get_search_form(); ?>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
-	<div class="site-branding">
-		<p class="site-title"><a href="/" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-	</div>
 	

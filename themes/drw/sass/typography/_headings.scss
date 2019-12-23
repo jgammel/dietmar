@@ -6,6 +6,10 @@ h2.entry-title{
 	font-weight: normal;
 	margin: 0;
 }
+.site-branding{
+	float: left;
+	margin-left: 25%;
+}
 p.site-title, p.site-logo{
 	color: #d2232a;
 	padding: 1em 0 7px 0;
@@ -14,20 +18,13 @@ p.site-title, p.site-logo{
 	}
 }
 p.site-logo{
-	float: left;
-    overflow: hidden;
-    width: 25%;
     margin-top: 0;
     font-family: $font__main;
     //border-right: 8px solid white;
 }
 
 p.site-title{
-	float: right;
-    overflow: hidden;
-    width: 75%;
     margin-top: 0;
-    border-left: 9px solid #faf9f7;
     font-family: $font__bold;
     letter-spacing: 1px;
 }
