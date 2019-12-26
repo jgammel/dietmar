@@ -1,15 +1,16 @@
 /* Big menu */
 	.search-form{
 			display: inline-block;
-			float: right;
 			vertical-align: top;
 			padding-top: 15px;
 			-webkit-appearance: none;
 			color: $color__text-main;
-			margin-left: 60px;
+			margin-left: 0px;
 			background: transparent;
+			margin-left: 25%;
 			@media screen and (min-width: 37.5em) {
-				margin-left: 0;
+				margin-left: 60;
+				float: right;
 			}
 			input[type="search"]{
 				border: none;
@@ -46,13 +47,15 @@
 		clear: both;
 		display: block;
 		float: left;
-		width: 24%;
-		min-width: 340px;
+		width: auto;
 		min-height: 88px;
 		padding-left: 25px;
 		background: none;
 		position: absolute;
 		z-index: 10009; //always above everything including slick slider but below admin bar
+		@media screen and (min-width: 37.5em) {
+			width: 24%;
+		}
 		.menu-main-menu-container{
 			display: none;
 		}
@@ -60,8 +63,10 @@
 			box-shadow: 5px 5px 5px #e2e1e1;
 			background: rgba(250,249,247,0.95);
 			height: 100vh;
+			min-width: 340px;
 			position: fixed;
 			overflow-y: scroll;
+			padding-bottom: 50px; //make sure last item isn't covered by browser bar
 			.menu-main-menu-container{
 				display: block;
 			}
@@ -105,7 +110,7 @@
 					width: 100%;
 					position: relative;
 					@media screen and (min-width: 37.5em) {
-						width: 200px;
+						width: 250px;
 					}
 					&.menu-item-has-children{
 						> a.carrot-added:after{
@@ -137,12 +142,12 @@
 						//margin-left: -999em;
 					}
 					&.slide-in{
-						max-height: 1000px;
+						max-height: none;
 						margin-left: 0;
 						display: block;
 						-webkit-transition: max-height 2s linear; /* Safari */
 					    transition: max-height 2s linear;
-					    height: 100%;
+					    height: auto;
 					    > li{
 						    position: relative;
 						    &.menu-item-has-children{

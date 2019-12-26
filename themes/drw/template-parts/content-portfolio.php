@@ -26,7 +26,7 @@
 		<div class="portfolio-details">
 			<?php echo $body_text; ?>
 			<p><?php echo $the_date; ?></p>
-		<div class="post-navigtion">
+		<!--<div class="post-navigtion">
 		<?php 
 		//Portfolio Navigation by Client or genre
 		if(isset($_GET["nav_by"])){
@@ -60,7 +60,7 @@
 		<?php
 		}
 		?>
-		</div>
+		</div>-->
 		</div>
 		
 		

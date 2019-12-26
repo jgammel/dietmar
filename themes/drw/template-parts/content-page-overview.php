@@ -24,6 +24,7 @@
 				echo("</p>");
 				echo("<div class=\"hide-the-content\">");
 				the_content();
+				echo("<a class=\"read-less\">Less</a>");
 				echo("</div>");
 			}
 			else{

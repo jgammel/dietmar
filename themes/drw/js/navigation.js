@@ -119,14 +119,6 @@
 	var firstTier = container.find('ul#primary-menu > li.menu-item-has-children > a');
 	var secondTier = container.find('ul.sub-menu li.menu-item-has-children > a');
 	var thirdTier = container.find('ul.sub-menu li.menu-item-has-children ul.sub-menu li.menu-item-has-children > a').siblings('ul.sub-menu');
-	parentLink.each(function(){
-		$(this).bind("mouseenter", function(){
-			container.addClass("nav-expanded");
-		});
-		$(this).bind("tap", function(){
-			container.addClass("nav-expanded");
-		});
-	});
 	
 /*
 	container.bind("mouseleave", function(e){

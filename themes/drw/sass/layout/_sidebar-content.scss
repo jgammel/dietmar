@@ -10,15 +10,18 @@
 }
 @media screen and (max-width: 37.5em) {
 	.site-main{
-		margin: 0 25px;
+		margin: 0 25px 0 $size__site-sidebar;
 	}
 }
 .site-content .widget-area {
 	float: left;
 	overflow: hidden;
 	width: $size__site-sidebar;
-	padding: 0 50px;
+	padding: 0 25px;
 	margin-top: 50px;
+	@media screen and (max-width: 37.5em) {
+		display: none;
+	}
 	h2{
 		font-size: 1rem;
 		margin-top: 0;

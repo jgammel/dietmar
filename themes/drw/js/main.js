@@ -78,7 +78,7 @@ $(document).ready(function(){
 	  $('ul.image-gallery').addClass("visually-hidden");
   }
 
-  $('p.preview-text a.read-more').bind("click", function(){
+  $('p.preview-text a.read-more, a.read-less').bind("click", function(){
 	  ShowHideContent();
   });
 
@@ -105,6 +105,7 @@ $(document).ready(function(){
   
   function OpenPortfolioLightbox(obj){
 	  var windowHeight = $(document).height();
+	  var offsetY = window.pageYOffset;
 	  //windowHeight = windowHeight.toString() + "px";
 	  $.get(obj.attr('href'), function(data){
 		  var the_lightbox = "<div id=\"lightbox\"></div>";
@@ -114,7 +115,13 @@ $(document).ready(function(){
 		  var html = data.substring(html_start, html_end);
 		  $("body").append(the_lightbox);//create lightbox
 		  $("#lightbox").html(html);//add data to lightbox
-		  //$('#lightbox').css("height", windowHeight);
+		  $('#lightbox').css({
+            'margin-top': offsetY + 'px'
+       	  });
+		  $('body').css({
+            'position': 'fixed',
+            'top': -offsetY + 'px'
+          });
 		  slickify();  
 		  $("#lightbox").animate({
 			  opacity: 1,
@@ -122,7 +129,7 @@ $(document).ready(function(){
 			$("#lightbox").append(exit_button);// create exit button
 			$('#lightbox-exit').bind("click", function(e){
 				  $(this).remove(); //destroy exit button
-				 ClosePortfolioLightbox(); 
+				 ClosePortfolioLightbox(offsetY); 
 			  });
 		   $('#lightbox .post-navigation-next a, #lightbox .post-navigation-prev a').bind("click", function(e){
 				  //open portfolio item in a lightbox
@@ -133,7 +140,12 @@ $(document).ready(function(){
 	  });
   }
   
-  function ClosePortfolioLightbox(){
+  function ClosePortfolioLightbox(scrollY){
+	  $('body').css({
+            'position': '',
+            'top' : '',
+      });
+	  $(window).scrollTop(scrollY);
 	  $("#lightbox").animate({
 		  opacity: 0,
 	  }, 500 , function(){
@@ -255,7 +267,7 @@ $(document).ready(function(){
 	  footer.css("transform","translateY("+height+"px)");
   }
   
-  $('#masthead').bind("mouseenter", function(event){
+  $('#colophon').bind("mouseleave", function(event){
 	  //$('body').removeClass("scrollaway");
 	  $('#colophon').removeClass("expanded");
 	  $('#colophon').css("transform","");
