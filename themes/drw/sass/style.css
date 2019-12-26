@@ -284,7 +284,7 @@ a:hover, a:active { outline: 0; }
 
 @media screen and (min-width: 37.5em) { .main-navigation ul ul a { min-width: 110px; } }
 
-.main-navigation ul li:hover > ul { margin-left: 0; display: block; width: 999em; }
+.main-navigation ul li:hover > ul { margin-left: 0; display: block; width: 100%; }
 
 .main-navigation li { float: none; position: relative; width: 100%; }
 
