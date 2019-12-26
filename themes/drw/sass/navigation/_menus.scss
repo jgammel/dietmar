@@ -109,9 +109,6 @@
 					float: none;
 					width: 100%;
 					position: relative;
-					@media screen and (min-width: 37.5em) {
-						width: 250px;
-					}
 					&.menu-item-has-children{
 						> a.carrot-added:after{
 							@media screen and (min-width: 37.5em) {
@@ -214,7 +211,7 @@
 						-webkit-transition: max-height 2s linear; /* Safari */
 					    transition: max-height 2s linear;
 						&.slide-in{
-							max-height: 1000px;
+							max-height: none;
 							margin-left: 0;
 							display: block;
 							-webkit-transition: height 2s linear; /* Safari */
@@ -258,9 +255,6 @@
 			float: none;
 			position: relative;
 			width: 100%;
-			@media screen and (min-width: 37.5em) {
-				width: 110px;
-			}
 	
 			&:hover > a {
 				color: #d2232a;

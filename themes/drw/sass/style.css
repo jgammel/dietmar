@@ -248,8 +248,6 @@ a:hover, a:active { outline: 0; }
 
 .main-navigation ul ul li { float: none; width: 100%; position: relative; }
 
-@media screen and (min-width: 37.5em) { .main-navigation ul ul li { width: 250px; } }
-
 @media screen and (min-width: 37.5em) { .main-navigation ul ul li.menu-item-has-children > a.carrot-added:after { content: '>'; position: relative; left: 10px; top: 0; } }
 
 .main-navigation ul ul a { padding-right: 15px; }
@@ -278,7 +276,7 @@ a:hover, a:active { outline: 0; }
 
 .main-navigation ul ul li:hover > ul { left: 0; max-height: 0; display: none; -webkit-transition: max-height 2s linear; /* Safari */ transition: max-height 2s linear; }
 
-.main-navigation ul ul li:hover > ul.slide-in { max-height: 1000px; margin-left: 0; display: block; -webkit-transition: height 2s linear; /* Safari */ transition: height 2s linear; }
+.main-navigation ul ul li:hover > ul.slide-in { max-height: none; margin-left: 0; display: block; -webkit-transition: height 2s linear; /* Safari */ transition: height 2s linear; }
 
 .main-navigation ul ul li ul li:hover > ul { max-height: 0; display: none; }
 
@@ -289,8 +287,6 @@ a:hover, a:active { outline: 0; }
 .main-navigation ul li:hover > ul { margin-left: 0; display: block; width: 999em; }
 
 .main-navigation li { float: none; position: relative; width: 100%; }
-
-@media screen and (min-width: 37.5em) { .main-navigation li { width: 110px; } }
 
 .main-navigation li:hover > a { color: #d2232a; }
 

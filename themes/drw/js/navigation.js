@@ -132,15 +132,15 @@
 		e.preventDefault();
 	});
 	
-	secondTier.bind('click', function(e){
+	secondTier.bind('mouseenter', function(e){
 		e.preventDefault(); //prevent normal click activity
-		$(this).siblings('ul.sub-menu').first().toggleClass("slide-in"); //open the child menu instead
-		$(this).toggleClass("carrot-added");
+		$(this).siblings('ul.sub-menu').first().addClass("slide-in"); //open the child menu instead
+		$(this).addClass("carrot-added");
 		e.stopPropagation(); //prevent bubbling
 	});
 	
 	thirdTier.bind('click', function(e){
-		secondTier.unbind('click');
+		secondTier.unbind('mouseenter');
 	});
 		
 })( jQuery );
