@@ -29,7 +29,15 @@
 	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
 		menu.className += ' nav-menu';
 	}
-
+	
+	container.onmouseleave = function(){
+		if ( -1 !== container.className.indexOf( 'nav-expanded' ) ) {
+			container.className = container.className.replace( ' nav-expanded', '' );
+			button.setAttribute( 'aria-expanded', 'false' );
+			menu.setAttribute( 'aria-expanded', 'false' );
+		}
+	}
+	
 	button.onclick = function() {
 		if ( -1 !== container.className.indexOf( 'nav-expanded' ) ) {
 			container.className = container.className.replace( ' nav-expanded', '' );
