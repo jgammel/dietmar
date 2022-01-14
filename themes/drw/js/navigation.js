@@ -100,11 +100,21 @@
 						}
 						menuItem.parentNode.children[i].classList.remove( 'focus' );
 					}
-					menuItem.classList.add( 'focus' );
-					container.classList.add( 'nav-expanded' );
+					menuItem.classList.add( 'focus');
+					// if ul.sub-menu exists as a child of menuItem, add class 'slide-in'
+					if(menuItem.hasChildNodes() && menuItem.children[1].classList.contains('sub-menu')){
+						menuItem.children[1].classList.add('slide-in');
+
+					};
+					container.classList.add( 'nav-expanded');
 				} else {
-					menuItem.classList.remove( 'focus' );
-					container.classList.remove( 'nav-expanded' );
+					menuItem.classList.remove( 'focus');
+					if(menuItem.hasChildNodes() && menuItem.children[1].classList.contains('sub-menu')){
+						menuItem.children[1].classList.remove('slide-in');
+
+					};
+					// if ul.sub-menu exists as a child of menuItem, remove class 'slide-in'
+					container.classList.remove( 'nav-expanded');
 				}
 			};
 
@@ -140,15 +150,22 @@
 		e.preventDefault();
 	});
 	
-	secondTier.bind('mouseenter', function(e){
+	secondTier.bind('click', function(e){
 		e.preventDefault(); //prevent normal click activity
-		$(this).siblings('ul.sub-menu').first().addClass("slide-in"); //open the child menu instead
-		$(this).addClass("carrot-added");
+		// hasClass('slide-in') will be false when menu is closed and true when menu is open
+		if ( false !== $(this).siblings('ul.sub-menu').first().hasClass("slide-in") ) {
+			$(this).siblings('ul.sub-menu').first().removeClass("slide-in"); //close the child menu
+			$(this).removeClass("carrot-added");
+		}
+		else{
+			$(this).siblings('ul.sub-menu').first().addClass("slide-in"); //open the child menu
+			$(this).addClass("carrot-added");
+		}
 		e.stopPropagation(); //prevent bubbling
 	});
 	
 	thirdTier.bind('click', function(e){
-		secondTier.unbind('mouseenter');
+		secondTier.unbind('click');
 	});
 		
 })( jQuery );
