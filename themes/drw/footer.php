@@ -193,7 +193,7 @@
 				<?php timeline_dump($oughteens);?>
 			</div>
 			<div class="infinity">
-			<!-- Javascript in mian.js will add extra timeline segments here as needed. -->
+			<!-- Javascript in main.js will add extra timeline segments here as needed. -->
 			</div>
 		</div><!-- #timeline -->
 		<div id="timeline-sort-bar">
