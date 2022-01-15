@@ -230,6 +230,18 @@ $(document).ready(function(){
 		 return $(this).attr('data-name').match(dataName); 
 	  }).children('.timeline-ball').css('background', '#d2232a');
   }
+
+  function footerInit(footer){
+  	//calculate the entire width of the footer timeline 
+  	var totalDecadeLength = 0;
+  	var decadeLength = footer.find('.decade');
+  	
+  	$(decadeLength).each(function(index){
+  		totalDecadeLength += parseInt($(this).width(), 10);
+  	});
+
+  	return totalDecadeLength;
+  }
   
   $('#timeline-sort-bar .sort-button').bind("click", function(e){
 	  var dataName = $(this).attr("data-name");
@@ -243,13 +255,40 @@ $(document).ready(function(){
 		  //translateX to position of the ball
 	  });
   });
+
+
   
   $('#colophon').bind("mouseenter", function(event){
 	  //$('body').addClass("scrollaway");
 	  $(this).addClass("expanded");
+	  var footerMeasured = footerInit($(this)); //once footer elements are visible, measure elements and perform calculations
 	  translateFooter($(this));
+	  trackMouseMovements(footerMeasured);
 	  event.stopImmediatePropagation();
   });
+
+  function trackMouseMovements(footerMeasured){
+  	var windowWidth = $(window).width(); // get the width of the current browser window
+  	
+  	// TODO: if footerMeasured is greater than window Width 
+  	$('#colophon').on("mousemove", function(event) {
+  		let amtToScrollRight = windowWidth - footerMeasured;
+  		// if the x position of the mouse is too close to the edge of windowWidth, 
+  		//translate the timeline until we reach the end of the timeline width
+  		if( event.pageX >= windowWidth - 150 ){
+  			//animate left
+  			$('#timeline').stop(true).animate({ //stop the previous animation and clear the queue
+  				left: amtToScrollRight,
+  			}, 600);
+  		}
+  		if ( event.pageX <= 150 ){
+  			//animate right
+  			$('#timeline').stop(true).animate({ //stop the previous animation and clear the queue
+  				left: 0,
+  			}, 600);
+  		}
+  	});
+  }
   
   function translateFooter(footer){
 	  var height = footer.outerHeight();
