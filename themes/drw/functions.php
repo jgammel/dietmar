@@ -318,6 +318,7 @@ function drw_save_postdata($post_id, $post)
     delete_post_meta( $post_id, $meta_key, $meta_value );
     
 }
+
 /**
  * Set up portfolio custom post type.
  */
@@ -537,6 +538,9 @@ function drw_scripts() {
 	wp_enqueue_script( 'jQuery', get_template_directory_uri() . '/js/libs/jquery-3.2.1.min.js', array(), '20151215', false );
 	
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/js/libs/slick/slick.min.js', array('jQuery'), '20151215', false );
+
+	wp_enqueue_script( 'popper', get_template_directory_uri() . '/js/libs/popper.min.js', array('jQuery'), '20151215', false );
+	wp_enqueue_script( 'popper_polyfill', 'https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.find,Promise,Object.assign', array('popper'), '20151215', false );
 	
 	wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/libs/masonry.pkgd.js', array('jQuery'), '20151215', false );
 	

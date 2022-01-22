@@ -242,6 +242,31 @@ $(document).ready(function(){
 
   	return totalDecadeLength;
   }
+
+  function popperInit(timelineBall){
+  	//pass the <reference> and the <popper> to createPopper
+  	const reference = timelineBall[0];
+	const popper = reference.nextSibling;
+
+	Popper.createPopper(reference, popper, {
+	  // options
+	  placement: 'bottom-start',
+	  strategy: 'absolute',
+	  modifiers: [
+	    {
+	      name: 'flip',
+	      enabled: true,
+	    },
+	    {
+	      name: 'preventOverflow',
+	      options: {
+	        mainAxis: true, // true by default
+	        altAxis: false, // false by default
+	      },
+	    },
+	  ],
+	});
+  }
   
   $('#timeline-sort-bar .sort-button').bind("click", function(e){
 	  var dataName = $(this).attr("data-name");
@@ -250,7 +275,13 @@ $(document).ready(function(){
 	  genreSortify(dataName);
   });
   
-  $('.timeline-ball').on("mouseenter mouseleave", function(event){
+  $('.timeline-ball').on("mouseenter", function(event){
+  	  popperInit($(this)); //position timeline elements with Popper.js
+	  $(this).siblings('.hover-box').fadeToggle(200, function(){
+		  //translateX to position of the ball
+	  });
+  });
+  $('.timeline-ball').on("mouseleave", function(event){
 	  $(this).siblings('.hover-box').fadeToggle(200, function(){
 		  //translateX to position of the ball
 	  });
