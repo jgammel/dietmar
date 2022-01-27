@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function(){ //runs when the DOM is ready before all image are loaded
   $('#clothesline-wrapper--XXXDEPRECATED').slick({
     infinite:false,
     slidesToShow: 6,
@@ -60,8 +60,8 @@ $(document).ready(function(){
 	centerMode: false,
   });
   
-  if( $('ul.image-gallery').children().length > 1){
-	  $('ul.image-gallery').slick({
+  if( $('ul.easy-image-gallery').children().length > 1){
+	  $('ul.easy-image-gallery').slick({
 		  slidesToShow: 5,
 		  slidesToScroll: 1,
 		  asNavFor: '#portfolio-slider',
@@ -72,10 +72,10 @@ $(document).ready(function(){
 		  focusOnSelect: true,
 		  adaptiveHeight: false,
 	  });
-	  $('ul.image-gallery').css("visibility","visible");
+	  $('ul.easy-image-gallery').css("visibility","visible");
   }
   else{
-	  $('ul.image-gallery').addClass("visually-hidden");
+	  $('ul.easy-image-gallery').addClass("visually-hidden");
   }
 
   $('p.preview-text a.read-more, a.read-less').bind("click", function(){
@@ -182,34 +182,36 @@ $(document).ready(function(){
 		infinite: false,
 		slidesToShow: 1,
 		slidesToScroll: 1,
+		asNavFor: 'ul.easy-image-gallery',
 		arrows: true,
 		adaptiveHeight: false,
 		centerMode: false,
 		lazyLoad: 'ondemand',
 	});
-	if( $('ul.image-gallery').children().length > 1){
-	  $('ul.image-gallery').slick({
+	if( $('ul.easy-image-gallery').children().length > 1){
+	  $('ul.easy-image-gallery').slick({
 		  slidesToShow: 5,
 		  slidesToScroll: 1,
 		  asNavFor: '#portfolio-slider',
-		  infinite: false,
+		  infinite: true,
 		  dots: false,
 		  arrows: false,
 		  centerMode: false,
 		  focusOnSelect: true,
 		  adaptiveHeight: false,
+		  variableWidth: true,
 	  });
 	  
-	  $('ul.image-gallery').css("visibility","visible");
+	  $('ul.easy-image-gallery').css("visibility","visible");
 	}
 	else{
-		$('ul.image-gallery').addClass("visually-hidden");
+		$('ul.easy-image-gallery').addClass("visually-hidden");
 	}
   }
   function unslickify(){
 	  $('#portfolio-slider').slick('unslick');
-	  if( $('ul.image-gallery').children().length > 1){
-	  	$('ul.image-gallery').slick('unslick');
+	  if( $('ul.easy-image-gallery').children().length > 1){
+	  	$('ul.easy-image-gallery').slick('unslick');
 	  }
   }
   
@@ -378,4 +380,3 @@ $(document).ready(function(){
   }
 
 });
-	
