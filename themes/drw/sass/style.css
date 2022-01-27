@@ -583,21 +583,21 @@ body.single-portfolio #content .entry-footer { clear: both; }
 
 @media screen and (max-width: 37.5em) { #lightbox .entry-content { width: 100%; max-width: none; margin-left: 0; } }
 
-#lightbox .entry-content span.client-term { color: #000; padding-right: 10px; }
+.entry-content span.client-term { color: #000; padding-right: 10px; }
 
-#lightbox .entry-content ul.easy-image-gallery { margin: 0; padding: 0; clear: left; visibility: hidden; }
+.entry-content ul.easy-image-gallery { margin: 0; padding: 0; clear: left; visibility: hidden; }
 
-#lightbox .entry-content ul.easy-image-gallery a { position: relative; display: block; }
+.entry-content ul.easy-image-gallery a { position: relative; display: block; }
 
-#lightbox .entry-content ul.easy-image-gallery ul { margin-bottom: 0; }
+.entry-content ul.easy-image-gallery ul { margin-bottom: 0; }
 
-#lightbox .entry-content ul.easy-image-gallery .slick-track { margin: 0; }
+.entry-content ul.easy-image-gallery .slick-track { margin: 0; }
 
-#lightbox .entry-content ul.easy-image-gallery .slick-track li { max-width: 70px; display: inline-block; padding: 0 25px 0 0; margin: 0; }
+.entry-content ul.easy-image-gallery .slick-track li { max-width: 70px; display: inline-block; padding: 0 25px 0 0; margin: 0; }
 
-#lightbox .entry-content ul.easy-image-gallery .slick-track li img { box-shadow: 1px 1px 2px 1px #695c49; -webkit-box-shadow: 1px 1px 2px 1px #695c49; }
+.entry-content ul.easy-image-gallery .slick-track li img { box-shadow: 1px 1px 2px 1px #695c49; -webkit-box-shadow: 1px 1px 2px 1px #695c49; }
 
-#lightbox .entry-content ul.easy-image-gallery .slick-track li:focus { outline: none; }
+.entry-content ul.easy-image-gallery .slick-track li:focus { outline: none; }
 
 #lightbox .entry-content #portfolio-slider { position: relative; }
 

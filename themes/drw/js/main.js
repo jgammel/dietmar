@@ -55,9 +55,11 @@ $(document).ready(function(){ //runs when the DOM is ready before all image are 
 	infinite: false,
 	slidesToShow: 1,
 	slidesToScroll: 1,
+	asNavFor: 'ul.easy-image-gallery',
 	arrows: true,
-	adaptiveHeight: true,
+	adaptiveHeight: false,
 	centerMode: false,
+	lazyLoad: 'ondemand',
   });
   
   if( $('ul.easy-image-gallery').children().length > 1){
@@ -65,12 +67,13 @@ $(document).ready(function(){ //runs when the DOM is ready before all image are 
 		  slidesToShow: 5,
 		  slidesToScroll: 1,
 		  asNavFor: '#portfolio-slider',
-		  infinite: false,
+		  infinite: true,
 		  dots: false,
 		  arrows: false,
 		  centerMode: false,
 		  focusOnSelect: true,
 		  adaptiveHeight: false,
+		  variableWidth: true,
 	  });
 	  $('ul.easy-image-gallery').css("visibility","visible");
   }
