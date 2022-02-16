@@ -36,4 +36,5 @@ get_header(); ?>
 
 <?php
 in_category('reflections-follies') ? get_sidebar() : null;
+in_category('influences') ? get_sidebar('sidebar-2') : null;
 get_footer('overview');

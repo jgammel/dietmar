@@ -144,8 +144,17 @@ add_action( 'after_setup_theme', 'drw_content_width', 0 );
  */
 function drw_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'drw' ),
+		'name'          => esc_html__( 'Reflections + Follies Sidebar', 'drw' ),
 		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'drw' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Archive Sidebar', 'drw' ),
+		'id'            => 'sidebar-2',
 		'description'   => esc_html__( 'Add widgets here.', 'drw' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
