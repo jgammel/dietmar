@@ -348,13 +348,15 @@ a:hover, a:active { outline: 0; }
 
 @media screen and (max-width: 37.5em) { .site-main { margin: 0 25px 0 25%; } }
 
-.site-content .widget-area { float: left; overflow: hidden; width: 25%; padding: 0 25px; margin-top: 50px; }
+.site-content .widget-area { float: left; overflow: hidden; width: 25%; padding: 0 25px; }
+
+.site-content aside.widget-area:first-of-type { margin-top: 50px; }
 
 @media screen and (max-width: 37.5em) { .site-content .widget-area { display: none; } }
 
 .site-content .widget-area h2 { font-size: 1rem; margin-top: 0; font-weight: normal; }
 
-.site-content .widget-area .jaw_widget { margin: 0; padding: 0; list-style: none; }
+.site-content .widget-area .jaw_widget { margin: 0 0 1.5rem 0; padding: 0; list-style: none; }
 
 .site-content .widget-area .jaw_widget ul { margin: 0.25rem 0; padding: 0.5rem 0 0 1rem; list-style: none; }
 

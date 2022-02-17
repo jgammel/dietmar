@@ -12,7 +12,7 @@ if ( ! is_active_sidebar( 'sidebar-2' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area">
+<aside id="sidebar-2" class="widget-area">
 	<div class="site-branding">
 	<?php
 
@@ -22,39 +22,45 @@ if ( ! is_active_sidebar( 'sidebar-2' ) ) {
 	<?php
 	endif; ?>
 </div><!-- .site-branding -->
-	<?php $categories = get_the_category(); 
-	$catID = $categories[0]->cat_ID;  ?>
-	<?php dynamic_sidebar( 'sidebar-2' ); ?>
-	<?php // WP_Query arguments
-	$args = array(
-		'post_type'              => array( 'post' ),
-		'order'                  => 'DESC',
-		'orderby'                => 'date',
-		'tax_query' 			 => array(
-	        array(
-	            'taxonomy' => 'category',
-	            'field'    => 'term_id',
-	            'terms'    => $catID,
-	        ),
-	    ),
-	);
+	<?php $categories = get_the_category();
+	$theIDs = [];
+	$theNames = [];
+	// for each $cat in $categories, get the cat_ID and store it in a strong we can pass to terms
+	foreach($categories as $cat){
+		if ($cat->cat_name !== 'Reflections + Follies'){
+		// WP_Query arguments
+		$args = array(
+			'post_type'              => array( 'post' ),
+			'order'                  => 'DESC',
+			'orderby'                => 'date',
+			'tax_query' 			 => array(
+		        array(
+		            'taxonomy' => 'category',
+		            'field'    => 'term_id',
+		            'terms'    => $cat->cat_ID,
+		        ),
+		    ),
+		);
 
-	// The Query
-	$cat_archive_query = new WP_Query( $args );
+		// The Query
+		$cat_archive_query = new WP_Query( $args );
 
-	// The Loop
-	if ( $cat_archive_query->have_posts() ) {
-		echo '<ul class="jaw_widget">';
-		while ( $cat_archive_query->have_posts() ) {
-			$cat_archive_query->the_post();
-			echo '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+		// The Loop
+		if ( $cat_archive_query->have_posts() ) {
+			echo '<h2 class="widget-title">'.$cat->cat_name.' Archive</h2>';
+			echo '<ul class="jaw_widget">';
+			while ( $cat_archive_query->have_posts() ) {
+				$cat_archive_query->the_post();
+				echo '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+			}
+			echo '</ul>';
+		} else {
+			// no posts found
 		}
-		echo '</ul>';
-	} else {
-		// no posts found
-	}
 
-	// Restore original Post Data
-	wp_reset_postdata();
+		// Restore original Post Data
+		wp_reset_postdata();
+		}
+	}
 	?>
 </aside><!-- #secondary -->
