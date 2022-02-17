@@ -416,6 +416,7 @@ function portfolio_shortcode( $atts ){
 		$args = array(
 			'post_type'              => array( 'portfolio' ),
 			'post_status'            => array( 'publish' ),
+			'posts_per_page'         => '-1',
 			'tax_query' => array(
 				array(
 					'taxonomy' => 'client',
@@ -474,6 +475,7 @@ function portfolio_shortcode( $atts ){
 		$args = array(
 			'post_type'              => array( 'portfolio' ),
 			'post_status'            => array( 'publish' ),
+			'posts_per_page'         => '-1',
 			'tax_query' => array(
 				array(
 					'taxonomy' => 'genre',
