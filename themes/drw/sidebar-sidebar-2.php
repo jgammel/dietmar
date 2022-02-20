@@ -22,9 +22,55 @@ if ( ! is_active_sidebar( 'sidebar-2' ) ) {
 	<?php
 	endif; ?>
 </div><!-- .site-branding -->
-	<?php $categories = get_the_category();
-	$theIDs = [];
-	$theNames = [];
+
+<?php 
+
+	if (is_archive() ){
+		echo '<h2 class="widget-title">'.get_the_archive_title().' Archive</h2>';
+		$archive_id = get_queried_object_id();
+		//if the archive is not "Reflections + Follies, we can query all the posts in JUST this archive"
+		if($archive_id !== 50){
+			// WP_Query arguments
+		$args = array(
+			'post_type'              => array( 'post' ),
+			'order'                  => 'DESC',
+			'orderby'                => 'date',
+			'tax_query' 			 => array(
+		        array(
+		            'taxonomy' => 'category',
+		            'field'    => 'term_id',
+		            'terms'    => $archive_id,
+		        ),
+		    ),
+		);
+
+		// The Query
+		$cat_archive_query = new WP_Query( $args );
+
+		// The Loop
+		if ( $cat_archive_query->have_posts() ) {
+			echo '<ul class="jaw_widget">';
+			while ( $cat_archive_query->have_posts() ) {
+				$cat_archive_query->the_post();
+				echo '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+			}
+			echo '</ul>';
+		} else {
+			// no posts found
+		}
+
+		// Restore original Post Data
+		wp_reset_postdata();
+		}
+
+	}
+?>
+
+	<?php 
+
+	if (is_single() ){
+
+	 $categories = get_the_category();
 	// for each $cat in $categories, get the cat_ID and store it in a strong we can pass to terms
 	foreach($categories as $cat){
 		if ($cat->cat_name !== 'Reflections + Follies'){
@@ -61,6 +107,8 @@ if ( ! is_active_sidebar( 'sidebar-2' ) ) {
 		// Restore original Post Data
 		wp_reset_postdata();
 		}
+	}
+
 	}
 	?>
 </aside><!-- #secondary -->
