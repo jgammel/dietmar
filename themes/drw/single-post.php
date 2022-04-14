@@ -35,6 +35,10 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
+
+
 in_category('reflections-follies') ? get_sidebar() : null;
-in_category('influences' || 'colleagues' || 'history' || 'philosophy' || 'curriculum' || 'lectures' || 'articles' || 'papers' || 'presentations' || 'design-criticisms' || 'opinions') ? get_sidebar('sidebar-2') : null;
+
+in_category(array('influences','colleagues','history','philosophy','curriculum','lectures','articles','papers','presentations','design-criticisms','opinions')) ? get_sidebar('sidebar-2') : null;
+
 get_footer('overview');
